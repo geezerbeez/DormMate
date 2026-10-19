@@ -21,6 +21,5 @@
         <item name="cornerRadius">56dp</item>
     </style>
 
-
     <style name="Theme.DormMate" parent="Base.Theme.DormMate" />
 </resources>
