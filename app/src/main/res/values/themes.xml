@@ -3,6 +3,22 @@
     <style name="Base.Theme.DormMate" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <!-- Primary Button -->
+    <style name="Widget.DormMate.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/orange</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">56dp</item>
+    </style>
+
+    <!-- Secondary Button -->
+    <style name="Widget.DormMate.Button.Secondary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/transparent</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="cornerRadius">56dp</item>
     </style>
 
     <style name="Theme.DormMate" parent="Base.Theme.DormMate" />

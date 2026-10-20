@@ -1,6 +1,9 @@
 package com.itismob.s02.group9.mco.dormmate;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    private Button signupBtn, loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +24,25 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        this.signupBtn = findViewById(R.id.signupBtn);
+        this.loginBtn = findViewById(R.id.loginBtn);
+
+        signupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SignUp.class);
+                startActivity(intent);
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LogIn.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
