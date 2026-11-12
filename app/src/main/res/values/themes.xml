@@ -27,4 +27,18 @@
     </style>
 
     <style name="Theme.DormMate" parent="Base.Theme.DormMate" />
+
+    <!-- Bottom Navigation Bar -->
+    <style name="Widget.DormMate.BottomNavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+
+        <item name="android:color">@color/nav_indicator</item>
+        <item name="shapeAppearance">
+            @style/ShapeAppearance.DormMate.BottomNav
+        </item>
+
+    </style>
+
+    <style name="ShapeAppearance.DormMate.BottomNav">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
