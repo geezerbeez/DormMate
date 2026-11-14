@@ -29,7 +29,13 @@ public class LogIn extends AppCompatActivity {
             return insets;
         });
 
-        this.createAccTv = findViewById(R.id.createAccTv);
+        loginEmailEtv = findViewById(R.id.loginEmailEtv);
+        loginPasswordEtv = findViewById(R.id.loginPasswordEtv);
+        forgotPasswordTv = findViewById(R.id.forgotPasswordTv);
+        createAccTv = findViewById(R.id.createAccTv);
+        loginBtn = findViewById(R.id.loginBtn);
+        loginGoogleBtn = findViewById(R.id.loginGoogleBtn);
+        loginFacebookBtn = findViewById(R.id.loginFacebookBtn);
 
         createAccTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +43,13 @@ public class LogIn extends AppCompatActivity {
                 Intent intent = new Intent(LogIn.this, SignUp.class);
                 startActivity(intent);
             }
+        });
+
+        loginBtn.setOnClickListener(v -> {
+            // TODO: validate email/password (call authentication) first
+            Intent intent = new Intent(LogIn.this, Pages.class);
+            startActivity(intent);
+            finish(); // so Back doesn't return to the login screen
         });
     }
 }
