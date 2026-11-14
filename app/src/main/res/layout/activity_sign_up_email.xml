@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/cream"
+    tools:context=".SignUp2">
+
+    <View
+        android:layout_width="288dp"
+        android:layout_height="496dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/bg_deco" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/activity_email_heading"
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
+            android:text="Can we get your email?"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:text="Your basic and personal information" />
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Email"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@id/etEmailEntry"
+            style="@style/SignUpInput"
+            android:layout_width="382dp"
+            android:autofillHints="personGivenName"
+            android:hint="Enter your Email Address"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName|textCapWords"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:text="Password"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@id/etPasswordEntry"
+            style="@style/SignUpInput"
+            android:layout_width="382dp"
+            android:autofillHints="personGivenName"
+            android:hint="Enter your desired Password"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName|textCapWords"
+            android:layout_marginLeft="20dp"/>
+
+        <CheckBox
+            android:id="@+id/cbShowPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="CheckBox" />
+    </LinearLayout>
+
+</FrameLayout>
