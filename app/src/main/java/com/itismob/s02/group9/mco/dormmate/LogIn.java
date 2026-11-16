@@ -68,6 +68,9 @@ public class LogIn extends AppCompatActivity {
             if(inputPassword.isEmpty()) {
                 loginPasswordTil.setError("Password is required.");
                 isValid = false;
+            } else if(inputPassword.length() < 12) {
+                loginPasswordTil.setError("Password must be at least 12 characters.");
+                isValid = false;
             }
 
             if(!isValid) {
