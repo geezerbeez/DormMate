@@ -72,6 +72,7 @@
                 android:textSize="16sp"/>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/loginEmailTil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundMode="filled"
@@ -101,6 +102,7 @@
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/loginPasswordTil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundMode="filled"
