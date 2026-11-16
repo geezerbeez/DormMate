@@ -42,7 +42,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".RoommateFragment"
+            android:name=".RoommateDiscoveryFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -51,6 +51,14 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ProfileFragment"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".RoommateProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".RoommateBookmarksActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
