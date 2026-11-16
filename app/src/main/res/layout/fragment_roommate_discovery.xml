@@ -77,6 +77,8 @@
         android:layout_height="540dp"
         android:layout_gravity="center"
         android:layout_margin="8dp"
+        android:clickable="true"
+        android:focusable="true"
         app:cardCornerRadius="24dp"
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true">
@@ -89,9 +91,34 @@
                 android:id="@+id/roommateImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/img_roommateprofile"
+                android:contentDescription="Roommate profile picture"
                 android:scaleType="centerCrop"
-                android:contentDescription="Roommate profile picture"/>
+                android:src="@drawable/img_roommateprofile" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/roommateCompatibility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:padding="8dp"
+                app:singleLine="false"
+                app:singleSelection="false">
+
+                <com.google.android.material.chip.Chip
+                    android:background="@color/lightOrange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="92% compatible"
+                    android:textColor="@color/orange"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    app:chipCornerRadius="48dp"
+                    app:chipBackgroundColor="@color/nav_indicator"
+                    app:chipStrokeColor="@color/orange"
+                    app:chipStrokeWidth=".5dp"/>
+
+
+            </com.google.android.material.chip.ChipGroup>
 
             <View
                 android:layout_width="match_parent"
