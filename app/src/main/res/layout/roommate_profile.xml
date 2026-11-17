@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/cream"
     tools:context=".RoommateProfileActivity">
 
 
@@ -29,8 +30,8 @@
 
             <ImageButton
                 android:id="@+id/btnBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:background="@drawable/circle_button"
                 android:contentDescription="Back"
                 android:layout_margin="16dp"
@@ -44,8 +45,8 @@
 
             <ImageButton
                 android:id="@+id/btnMenu"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:background="@drawable/circle_button"
                 android:contentDescription="Menu"
                 android:layout_margin="16dp"
@@ -53,9 +54,6 @@
                 android:src="@drawable/ic_menu" />
 
         </LinearLayout>
-
-
-
 
         <View
             android:layout_width="match_parent"
@@ -67,34 +65,167 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/roommateNameAge"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Cathy, 21"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-            <TextView
-                android:id="@+id/roommateCourse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="BS Information Technology • 3rd year"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:layout_marginTop="4dp"/>
+                <TextView
+                    android:id="@+id/roommateNameAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cathy, 21"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/roommateCourse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BS Information Technology • 3rd year"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_rounded_container"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/compatibilityPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="92%"
+                    android:textColor="@color/orange"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MATCH"
+                    android:textAllCaps="true"
+                    android:textSize="10sp"
+                    android:textColor="@color/darkGrey"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </FrameLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Roommate Profile goes here"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/aboutUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Cathy"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/aboutDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weekend cafe explorer and respectful roommate. I like a calm home during weekdays and shared dinners when schedules align."
+            android:textColor="@color/darkGrey"
+            android:textSize="12sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="4dp"
+                android:padding="12dp"
+                android:background="@drawable/bg_rounded_container">
+
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BUDGET"
+                android:textAllCaps="true"
+                android:textColor="@color/darkGrey"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:padding="16dp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="4dp"
+                android:padding="12dp"
+                android:background="@drawable/bg_rounded_container">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BUDGET"
+                    android:textAllCaps="true"
+                    android:textColor="@color/darkGrey"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:padding="16dp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="4dp"
+                android:padding="12dp"
+                android:background="@drawable/bg_rounded_container">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BUDGET"
+                    android:textAllCaps="true"
+                    android:textColor="@color/darkGrey"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:padding="16dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </LinearLayout>
