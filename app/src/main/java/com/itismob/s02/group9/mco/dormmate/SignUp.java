@@ -92,7 +92,7 @@ public class SignUp extends AppCompatActivity {
                 return;
             }
 
-            Intent intent = new Intent(SignUp.this, SignUp2.class);
+            Intent intent = new Intent(SignUp.this, activity_sign_up_email.class);
             startActivity(intent);
 
         });
