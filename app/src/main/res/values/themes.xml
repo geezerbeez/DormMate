@@ -44,6 +44,11 @@
 
     <!-- EDIT PROFILE SCREEN -->
 
+    <array name="budget_initial_values">
+        <item>6000.0</item>
+        <item>10000.0</item>
+    </array>
+
     <!-- Lifestyle habit chips (soft green, with check icon when selected) -->
     <style name="Widget.DormMate.Chip.Lifestyle" parent="Widget.Material3.Chip.Filter">
         <item name="chipBackgroundColor">#DCEFE6</item>

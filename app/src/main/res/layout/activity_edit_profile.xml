@@ -201,7 +201,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="none"
                             android:textSize="14sp"
-                            tools:text="Woman" />
+                            android:hint="Gender"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -239,7 +239,7 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:textSize="14sp"
-                            tools:text="20" />
+                            android:hint="Age"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -284,7 +284,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="none"
                             android:textSize="14sp"
-                            tools:text="BA Communication" />
+                            android:hint="Course"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -321,7 +321,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="none"
                             android:textSize="14sp"
-                            tools:text="2nd year" />
+                            android:hint="Year Level"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -361,11 +361,16 @@
                 android:stepSize="500"
                 android:valueFrom="3000"
                 android:valueTo="20000"
+                app:values="@array/budget_initial_values"
                 app:thumbColor="@color/white"
+                app:thumbHeight="22dp"
                 app:thumbStrokeColor="@color/orange"
                 app:thumbStrokeWidth="2dp"
+                app:thumbWidth="22dp"
+                app:tickVisible="false"
                 app:trackColorActive="@color/orange"
-                app:trackColorInactive="#E8E2D9" />
+                app:trackColorInactive="#E8E2D9"
+                app:trackHeight="6dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -395,65 +400,102 @@
                     android:layout_height="wrap_content"
                     android:inputType="none"
                     android:textSize="14sp"
-                    tools:text="Katipunan · UP Diliman · Teacher's Village" />
+                    android:hint="Preferred Area"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Lifestyle habits -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="8dp"
+                android:layout_alignParentStart="true"
 
                 android:text="Lifestyle habits"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                android:textStyle="bold"/>
 
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/lifestyleChipGroup"
+            <!-- Drinking -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:chipSpacingHorizontal="8dp"
-                app:chipSpacingVertical="0dp">
+                android:layout_marginTop="0dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipEarlySleeper"
-                    style="@style/Widget.DormMate.Chip.Lifestyle"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Early sleeper" />
+                    android:minWidth="76dp"
+                    android:text="Drinking"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipVeryTidy"
-                    style="@style/Widget.DormMate.Chip.Lifestyle"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/drinkingLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Select"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="#E8E2D9">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/drinkingDropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Smoking -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Very tidy" />
+                    android:minWidth="76dp"
+                    android:text="Smoking"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipNonSmoker"
-                    style="@style/Widget.DormMate.Chip.Lifestyle"
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/smokingLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Non-smoker" />
+                    android:hint="Select"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="#E8E2D9">
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipQuietWeekdays"
-                    style="@style/Widget.DormMate.Chip.Lifestyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Quiet weekdays" />
-            </com.google.android.material.chip.ChipGroup>
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/smokingDropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
 
             <!-- Roommate preferences -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="8dp"
                 android:layout_alignParentStart="true"
 
@@ -461,36 +503,85 @@
                 android:textSize="15sp"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+
+                android:text="GENDER"
+                android:textSize="11sp"/>
+
             <com.google.android.material.chip.ChipGroup
-                android:id="@+id/roommatePrefChipGroup"
+                android:id="@+id/roommateGenderChipGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:chipSpacingHorizontal="8dp"
-                app:singleSelection="false">
+                app:selectionRequired="true"
+                app:singleSelection="true">
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chipWomenNb"
+                    android:id="@+id/chipMan"
                     style="@style/Widget.DormMate.Chip.Roommate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Women / NB" />
+                    android:text="Man" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipWoman"
+                    style="@style/Widget.DormMate.Chip.Roommate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Woman" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipAnyGender"
                     style="@style/Widget.DormMate.Chip.Roommate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="true"
                     android:text="Any gender" />
+            </com.google.android.material.chip.ChipGroup>
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipAge1824"
-                    style="@style/Widget.DormMate.Chip.Roommate"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="18-24" />
-            </com.google.android.material.chip.ChipGroup>
+                    android:layout_marginBottom="4dp"
+
+                    android:text="AGE RANGE"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:id="@+id/roommateAgeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/orange"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    tools:text="18–24" />
+            </RelativeLayout>
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/roommateAgeSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:valueFrom="18"
+                android:valueTo="24"
+                app:thumbColor="@color/white"
+                app:thumbHeight="22dp"
+                app:thumbStrokeColor="@color/orange"
+                app:thumbStrokeWidth="2dp"
+                app:thumbWidth="22dp"
+                app:tickVisible="false"
+                app:trackColorActive="@color/orange"
+                app:trackColorInactive="#E8E2D9"
+                app:trackHeight="6dp" />
 
             <!-- Additional information -->
             <TextView
@@ -521,7 +612,7 @@
                     android:inputType="textMultiLine|textCapSentences"
                     android:minLines="3"
                     android:textSize="13sp"
-                    tools:text="I value clear communication, shared chores, and a calm home for studying." />
+                    android:hint="Maximum of 300 characters"/>
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
