@@ -53,6 +53,12 @@
             android:name=".ProfileFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ReadProfile"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
     </application>
 
 </manifest>

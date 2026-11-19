@@ -25,24 +25,27 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        this.signupBtn = findViewById(R.id.signupBtn);
-        this.loginBtn = findViewById(R.id.loginBtn);
+        startActivity(new Intent(this, ReadProfile.class));
+        finish();
 
-        signupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SignUp.class);
-                startActivity(intent);
-            }
-        });
-
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LogIn.class);
-                startActivity(intent);
-            }
-        });
+//        this.signupBtn = findViewById(R.id.signupBtn);
+//        this.loginBtn = findViewById(R.id.loginBtn);
+//
+//        signupBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, SignUp.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        loginBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, LogIn.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 }
