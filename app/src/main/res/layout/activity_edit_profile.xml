@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream"
+    android:fitsSystemWindows="true">
+
+    <!-- TOP HEADER (back, title, save) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topHeader"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/backButtonIb"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            app:shapeAppearanceOverlay="@style/circleImage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/profileTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit profile"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Save"
+            android:textColor="@color/orange"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- SCROLLABLE CONTENT -->
+    <ScrollView
+        android:id="@+id/contentScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintTop_toBottomOf="@+id/topHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Profile header (photo, name, progress) -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profileHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profilePicture"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/circleImage"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/catpfp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profilePictureEdit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@color/orange"
+                    android:padding="5dp"
+                    android:src="@drawable/baseline_photo_camera_24"
+                    app:shapeAppearanceOverlay="@style/circleImage"
+                    app:tint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/profilePicture"
+                    app:layout_constraintEnd_toEndOf="@+id/profilePicture" />
+
+                <TextView
+                    android:id="@+id/nameTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/profilePicture"
+                    app:layout_constraintTop_toTopOf="@+id/profilePicture"
+                    app:layout_constraintBottom_toTopOf="@+id/profileProgressTv"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Maya Santos" />
+
+                <TextView
+                    android:id="@+id/profileProgressTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:textColor="#6B6B6B"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/profilePicture"
+                    app:layout_constraintTop_toBottomOf="@+id/nameTv"
+                    app:layout_constraintBottom_toTopOf="@+id/profileProgressBar"
+                    tools:text="Profile 85% complete" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/profileProgressBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="6dp"
+                    app:indicatorColor="@color/orange"
+                    app:trackColor="#E8E2D9"
+                    app:trackThickness="4dp"
+                    app:trackCornerRadius="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/profilePicture"
+                    app:layout_constraintTop_toBottomOf="@+id/profileProgressTv"
+                    app:layout_constraintBottom_toBottomOf="@+id/profilePicture"
+                    tools:progress="85" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- About you -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="About you"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Gender -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+
+                        android:text="GENDER"
+                        android:textSize="11sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/genderLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="#E8E2D9">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/genderDropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:textSize="14sp"
+                            tools:text="Woman" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Age -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+
+                        android:text="AGE"
+                        android:textSize="11sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ageLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="#E8E2D9">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ageEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:textSize="14sp"
+                            tools:text="20" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <!-- Course -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+
+                        android:text="COURSE"
+                        android:textSize="11sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/courseLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="#E8E2D9">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/courseDropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:textSize="14sp"
+                            tools:text="BA Communication" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Year level -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+
+                        android:text="YEAR LEVEL"
+                        android:textSize="11sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/yearLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="#E8E2D9">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/yearDropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:textSize="14sp"
+                            tools:text="2nd year" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Housing preferences -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_alignParentStart="true"
+
+                    android:text="Housing preferences"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/budgetRangeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/orange"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    tools:text="₱6,000–₱10,000" />
+            </RelativeLayout>
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/budgetSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="500"
+                android:valueFrom="3000"
+                android:valueTo="20000"
+                app:thumbColor="@color/white"
+                app:thumbStrokeColor="@color/orange"
+                app:thumbStrokeWidth="2dp"
+                app:trackColorActive="@color/orange"
+                app:trackColorInactive="#E8E2D9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+
+                android:text="PREFERRED AREA"
+                android:textSize="11sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/areaLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="#E8E2D9"
+                app:startIconDrawable="@drawable/baseline_location_on_24"
+                app:startIconTint="@color/orange">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/areaDropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textSize="14sp"
+                    tools:text="Katipunan · UP Diliman · Teacher's Village" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Lifestyle habits -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="Lifestyle habits"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/lifestyleChipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="0dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipEarlySleeper"
+                    style="@style/Widget.DormMate.Chip.Lifestyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Early sleeper" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipVeryTidy"
+                    style="@style/Widget.DormMate.Chip.Lifestyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Very tidy" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNonSmoker"
+                    style="@style/Widget.DormMate.Chip.Lifestyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Non-smoker" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipQuietWeekdays"
+                    style="@style/Widget.DormMate.Chip.Lifestyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Quiet weekdays" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Roommate preferences -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_alignParentStart="true"
+
+                android:text="Roommate preferences"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/roommatePrefChipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="8dp"
+                app:singleSelection="false">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipWomenNb"
+                    style="@style/Widget.DormMate.Chip.Roommate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Women / NB" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAnyGender"
+                    style="@style/Widget.DormMate.Chip.Roommate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Any gender" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAge1824"
+                    style="@style/Widget.DormMate.Chip.Roommate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="18-24" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Additional information -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+
+                android:text="ADDITIONAL INFORMATION"
+                android:textSize="11sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/additionalInfoLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="#E8E2D9">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/additionalInfoEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="3"
+                    android:textSize="13sp"
+                    tools:text="I value clear communication, shared chores, and a calm home for studying." />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAV -->
+    <include
+        android:id="@+id/bottomNavigation"
+        layout="@layout/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

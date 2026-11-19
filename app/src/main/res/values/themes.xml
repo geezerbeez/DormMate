@@ -41,4 +41,27 @@
     <style name="ShapeAppearance.DormMate.BottomNav" parent="ShapeAppearance.Material3.Corner.Full">
         <item name="cornerSize">50%</item>
     </style>
+
+    <!-- EDIT PROFILE SCREEN -->
+
+    <!-- Lifestyle habit chips (soft green, with check icon when selected) -->
+    <style name="Widget.DormMate.Chip.Lifestyle" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">#DCEFE6</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="checkedIconTint">#2F7D5B</item>
+        <item name="android:textColor">#2F7D5B</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- Roommate preference chips (turn dark when selected) -->
+    <style name="Widget.DormMate.Chip.Roommate" parent="Widget.Material3.Chip.Filter">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.DormMate.RoommateChip</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- Material 3 colors a selected filter chip with colorSecondaryContainer -->
+    <style name="ThemeOverlay.DormMate.RoommateChip" parent="">
+        <item name="colorSecondaryContainer">#1F2A30</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+    </style>
 </resources>
