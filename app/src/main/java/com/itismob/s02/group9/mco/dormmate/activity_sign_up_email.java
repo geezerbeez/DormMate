@@ -76,7 +76,7 @@ public class activity_sign_up_email extends AppCompatActivity {
                 return;
             }
 
-            Intent intent = new Intent(activity_sign_up_email.this, sign_up_3.class);
+            Intent intent = new Intent(activity_sign_up_email.this, activity_sign_up3.class);
             startActivity(intent);
 
 

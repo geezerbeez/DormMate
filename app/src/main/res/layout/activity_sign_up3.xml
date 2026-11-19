@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sign_up_3"
+    tools:context=".activity_sign_up3"
     android:background="@color/cream">
 
     <View
@@ -15,7 +15,7 @@
         android:layout_marginTop="60dp"
         android:background="@drawable/bg_deco"
         android:layout_marginRight="20dp"/>
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -47,7 +47,8 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/rounded_button_outline"
             android:paddingHorizontal="16dp"
-            android:paddingVertical="10dp">
+            android:paddingVertical="10dp"
+            android:clickable="true">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -62,6 +63,7 @@
                     android:textSize="18sp" />
 
                 <ImageView
+                    android:id="@+id/shpSolid1"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="120dp"
@@ -77,7 +79,8 @@
             android:background="@drawable/rounded_button_outline"
             android:paddingHorizontal="16dp"
             android:paddingVertical="10dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:clickable="true">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -92,6 +95,7 @@
                     android:textSize="18sp" />
 
                 <ImageView
+                    android:id="@+id/shpSolid2"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="125dp"
@@ -123,6 +127,7 @@
                     android:textSize="18sp" />
 
                 <ImageView
+                    android:id="@+id/shpSolid3"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="90dp"
@@ -131,19 +136,18 @@
             </LinearLayout>
         </FrameLayout>
 
+        <TextView
+            android:id="@+id/tvContractWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*Please select a contract length preference."
+            android:textColor="@color/orange"
+            android:visibility="gone"/>
+
     </LinearLayout>
-    <TextView
-        android:clickable="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Skip"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="80dp"
-        android:layout_marginStart="30dp"
-        android:textSize="20sp"/>
 
     <ImageButton
-        android:id="@+id/emailBtn"
+        android:id="@+id/btnProceed"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_gravity="bottom|end"
@@ -155,6 +159,5 @@
         android:scaleType="centerInside"
         android:padding="12dp"
         android:contentDescription="Continue" />
-
 
 </FrameLayout>

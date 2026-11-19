@@ -140,6 +140,16 @@
         </LinearLayout>
     </ScrollView>
     <TextView
+        android:id="@+id/tvLifestyleError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*Select atleast one answer"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="90dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/orange"
+        android:visibility="gone"/>
+    <TextView
         android:id="@+id/btnSkip"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
