@@ -34,7 +34,7 @@
         <item name="chipBackgroundColor">@color/darkCream</item>
         <item name="android:textColor">@color/darkGrey</item>
         <item name="chipStrokeColor">@color/darkGrey</item>
-        <item name="chipStrokeWidth">2dp</item>
+        <item name="chipStrokeWidth">1dp</item>
         <item name="chipCornerRadius">50dp</item>
         <item name="android:textSize">12sp</item>
         <item name="android:checkable">false</item>
