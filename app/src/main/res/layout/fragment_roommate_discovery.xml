@@ -36,24 +36,11 @@
                 android:id="@+id/nearProfiles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12 profiles near UP Diliman"
+                android:text="12 compatible profiles for you"
                 android:textColor="@color/darkGrey"
                 android:textSize="14sp"/>
     
         </LinearLayout>
-    
-        <ImageButton
-            android:id="@+id/bookmarkedBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_bookmarked"
-            android:background="@drawable/circle_button"
-            android:scaleType="fitCenter"
-            android:padding="12dp"
-            android:layout_margin="4dp"
-            android:elevation="4dp"
-            android:contentDescription="Bookmarked profiles"
-            app:tint="@color/lightOrange"/>
 
         <ImageButton
             android:id="@+id/filterBtn"
@@ -70,157 +57,187 @@
     
     </LinearLayout>
 
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/roommateProfile"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="540dp"
-        android:layout_gravity="center"
-        android:layout_margin="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="8dp"
-        app:cardUseCompatPadding="true">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="8dp">
 
-        <FrameLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/roommateProfile"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true">
 
-            <ImageView
-                android:id="@+id/roommateImage"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="Roommate profile picture"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_roommateprofile" />
+                android:layout_height="match_parent">
 
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/roommateCompatibility"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:padding="8dp"
-                app:singleLine="false"
-                app:singleSelection="false">
-
-                <com.google.android.material.chip.Chip
-                    android:background="@color/lightOrange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="92% compatible"
-                    android:textColor="@color/orange"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    app:chipCornerRadius="48dp"
-                    app:chipBackgroundColor="@color/nav_indicator"
-                    app:chipStrokeColor="@color/orange"
-                    app:chipStrokeWidth=".5dp"/>
-
-
-            </com.google.android.material.chip.ChipGroup>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="bottom"
-                android:background="@drawable/bg_profile_gradient"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <TextView
-                    android:id="@+id/roommateNameAge"
+                <ImageView
+                    android:id="@+id/roommateImage"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Cathy, 21"
-                    android:textColor="@color/white"
-                    android:textSize="26sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/roommateCourse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="BS Information Technology • 3rd year"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"/>
-
-                <TextView
-                    android:id="@+id/roommateLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Budget ₱6,000-₱9,000/month"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"/>
+                    android:layout_height="match_parent"
+                    android:contentDescription="Roommate profile picture"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_roommateprofile" />
 
                 <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/roommateTags"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
+                    android:padding="8dp"
                     app:singleLine="false"
-                    app:singleSelection="false"
-                    app:chipSpacingHorizontal="2dp"
-                    app:chipSpacingVertical="-8dp">
+                    app:singleSelection="false">
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
+                        android:id="@+id/roommateCompatibility"
+                        android:background="@color/lightOrange"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pet-friendly"/>
+                        android:text="92% compatible"
+                        android:textColor="@color/orange"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        app:chipCornerRadius="48dp"
+                        app:chipBackgroundColor="@color/nav_indicator"
+                        app:chipStrokeColor="@color/orange"
+                        app:chipStrokeWidth=".5dp"/>
 
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Study-focused"/>
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Early sleeper"/>
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tidy"/>
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Non-smoker"/>
 
                 </com.google.android.material.chip.ChipGroup>
 
-            </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bg_profile_gradient"/>
 
-        </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-    </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:id="@+id/roommateNameAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cathy, 21"
+                        android:textColor="@color/white"
+                        android:textSize="26sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/roommateCourse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BS Information Technology • 3rd year"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/roommateLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Budget ₱6,000-₱9,000/month"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"/>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/roommateTags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:singleLine="false"
+                        app:singleSelection="false"
+                        app:chipSpacingHorizontal="2dp"
+                        app:chipSpacingVertical="-8dp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/roommateTag"
+                            style="@style/Widget.DormMate.ProfileTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pet-friendly"/>
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/emptyState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp"
+            android:background="@color/cream"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_smile"
+                android:layout_marginBottom="16dp"
+                app:tint="@color/orange"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You've seen everyone!"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/darkGrey"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="There are no more compatible roommate profiles right now. Try adjusting your filters or check back later!"
+                android:textSize="14sp"
+                android:textColor="@color/darkGrey"
+                android:gravity="center"
+                android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="16dp">
 
         <ImageButton
             android:id="@+id/xBtn"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
             android:src="@drawable/ic_x"
-            android:background="@drawable/circle_button"
+            android:background="@drawable/bg_rounded_container"
             android:scaleType="fitCenter"
             android:padding="12dp"
             android:layout_margin="8dp"
@@ -229,24 +246,12 @@
             app:tint="@color/grey"/>
 
         <ImageButton
-            android:id="@+id/bookmarkBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_bookmark"
-            android:background="@drawable/circle_button"
-            android:scaleType="fitCenter"
-            android:padding="12dp"
-            android:layout_margin="8dp"
-            android:elevation="4dp"
-            android:contentDescription="Bookmark roommate profile"
-            app:tint="@color/lightOrange"/>
-
-        <ImageButton
             android:id="@+id/likeBtn"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
             android:src="@drawable/ic_heart"
-            android:background="@drawable/circle_button"
+            android:background="@drawable/bg_rounded_container"
             android:scaleType="fitCenter"
             android:padding="16dp"
             android:layout_margin="8dp"
@@ -255,9 +260,6 @@
             android:backgroundTint="@color/lightOrange"
             app:tint="@color/white"/>
 
-
     </LinearLayout>
-
-
 
 </LinearLayout>

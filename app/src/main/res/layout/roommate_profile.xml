@@ -1,558 +1,521 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/cream"
     tools:context=".RoommateProfileActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-                <ImageView
-                    android:id="@+id/roommateImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="Roommate profile picture"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_roommateprofile" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <ImageButton
-                        android:id="@+id/btnBack"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:background="@drawable/circle_button"
-                        android:contentDescription="Back"
-                        android:layout_margin="16dp"
-                        android:padding="12dp"
-                        android:src="@drawable/signup_back" />
-
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:layout_weight="1" />
-
-                    <ImageButton
-                        android:id="@+id/btnMenu"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:background="@drawable/circle_button"
-                        android:contentDescription="Menu"
-                        android:layout_margin="16dp"
-                        android:padding="12dp"
-                        android:src="@drawable/ic_menu" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_gravity="bottom"
-                    android:background="@drawable/bg_profile_gradient" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:padding="20dp">
-
-                        <TextView
-                            android:id="@+id/roommateNameAge"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Cathy, 21"
-                            android:textColor="@color/white"
-                            android:textSize="26sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:id="@+id/roommateCourse"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="BS Information Technology • 3rd year"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:layout_marginTop="4dp"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="70dp"
-                        android:layout_height="50dp"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/bg_rounded_container"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:alpha="0.8"
-                        android:padding="2dp">
-
-                        <TextView
-                            android:id="@+id/compatibilityPercent"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="92%"
-                            android:textColor="@color/orange"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="MATCH"
-                            android:textAllCaps="true"
-                            android:textSize="10sp"
-                            android:textColor="@color/darkGrey"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </FrameLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/aboutUser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="About Cathy"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp">
 
-                <TextView
-                    android:id="@+id/aboutDesc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Weekend cafe explorer and respectful roommate. I like a calm home during weekdays and shared dinners when schedules align."
-                    android:textColor="@color/darkGrey"
-                    android:textSize="12sp"/>
+                    <ImageView
+                        android:id="@+id/roommateImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="Roommate profile picture"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_roommateprofile" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/bg_profile_gradient" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:id="@+id/roommateNameAge"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Cathy, 21"
+                                android:textColor="@color/white"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/roommateCourse"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="BS Information Technology • 3rd year"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="16dp"
+                            android:alpha="0.8"
+                            android:background="@drawable/bg_rounded_container"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="2dp">
+
+                            <TextView
+                                android:id="@+id/compatibilityPercent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="92%"
+                                android:textColor="@color/orange"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="MATCH"
+                                android:textAllCaps="true"
+                                android:textColor="@color/darkGrey"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <!-- Content -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal"
-                    android:baselineAligned="false">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical"
-                        android:padding="12dp"
-                        android:background="@drawable/bg_rounded_container">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:importantForAccessibility="no"
-                                android:src="@drawable/ic_wallet"
-                                app:tint="@color/orange" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="BUDGET"
-                                android:textColor="@color/darkGrey"
-                                android:textSize="10sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/roommateBudget"
-                            android:layout_width="61dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="₱6k-₱9k"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical"
-                        android:padding="12dp"
-                        android:background="@drawable/bg_rounded_container">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:importantForAccessibility="no"
-                                android:src="@drawable/ic_location"
-                                app:tint="@color/green" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="AREA"
-                                android:textColor="@color/darkGrey"
-                                android:textSize="10sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/roommateArea"
-                            android:layout_width="wrap_content"
-                            android:layout_height="16dp"
-                            android:layout_marginTop="4dp"
-                            android:text="Katipunan"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical"
-                        android:padding="12dp"
-                        android:background="@drawable/bg_rounded_container">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:importantForAccessibility="no"
-                                android:src="@drawable/ic_calendar"
-                                app:tint="@color/lightOrange" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="MOVE-IN"
-                                android:textColor="@color/darkGrey"
-                                android:textSize="10sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/roommateMoveInDate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="August"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Lifestyle"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="12dp"/>
-
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/roommateTags"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    app:singleLine="false"
-                    app:singleSelection="false"
-                    app:chipSpacingHorizontal="2dp"
-                    app:chipSpacingVertical="-8dp">
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/lightGreen"
-                        android:textColor="@color/green"
-                        app:chipStrokeColor="@color/green"
-                        android:text="Pet-friendly"/>
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/lightGreen"
-                        android:textColor="@color/green"
-                        app:chipStrokeColor="@color/green"
-                        android:text="Study-focused"/>
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/lightGreen"
-                        android:textColor="@color/green"
-                        app:chipStrokeColor="@color/green"
-                        android:text="Early sleeper"/>
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/lightGreen"
-                        android:textColor="@color/green"
-                        app:chipStrokeColor="@color/green"
-                        android:text="Tidy"/>
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.DormMate.ProfileTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/lightGreen"
-                        android:textColor="@color/green"
-                        app:chipStrokeColor="@color/green"
-                        android:text="Non-smoker"/>
-
-                </com.google.android.material.chip.ChipGroup>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Looking for"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="12dp"/>
-
-                <TextView
-                    android:id="@+id/roommateLookingFor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Women or non-binary roommates • 18-24 • Non-smoker • Okay with occasional guests • Values shared chores"
-                    android:textColor="@color/darkGrey"
-                    android:textSize="12sp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="@drawable/bg_rounded_container">
+                    android:padding="20dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/aboutUser"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:text="About Cathy"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Why you match"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Excellent fit"
-                            android:textColor="@color/orange"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/matchBudget"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Budget overlap"
-                            android:textSize="12sp" />
-
-                        <TextView
-                            android:id="@+id/matchBudgetPercentage"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="96%"
-                            android:textColor="@color/green"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:id="@+id/budgetProgress"
+                    <TextView
+                        android:id="@+id/aboutDesc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:progress="96"
-                        app:indicatorColor="@color/green"
-                        app:trackColor="@color/chip_bg"
-                        app:trackCornerRadius="3dp"
-                        app:trackThickness="6dp" />
+                        android:text="Weekend cafe explorer and respectful roommate. I like a calm home during weekdays and shared dinners when schedules align."
+                        android:textColor="@color/darkGrey"
+                        android:textSize="12sp" />
 
+                    <!-- Stat cards -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="16dp"
+                        android:baselineAligned="false"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/matchLifestyle"
+                        <!-- Budget -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_rounded_container"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:importantForAccessibility="no"
+                                    android:src="@drawable/ic_wallet"
+                                    app:tint="@color/orange" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:text="BUDGET"
+                                    android:textColor="@color/darkGrey"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/roommateBudget"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="₱6k-₱9k"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <!-- Area -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_rounded_container"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:importantForAccessibility="no"
+                                    android:src="@drawable/ic_location"
+                                    app:tint="@color/green" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:text="AREA"
+                                    android:textColor="@color/darkGrey"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/roommateArea"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Katipunan"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <!-- Stay Duration -->
+                        <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Lifestyle rhythm"
-                            android:textSize="12sp" />
+                            android:background="@drawable/bg_rounded_container"
+                            android:orientation="vertical"
+                            android:padding="12dp">
 
-                        <TextView
-                            android:id="@+id/matchLifestylePercentage"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="90%"
-                            android:textColor="@color/green"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:importantForAccessibility="no"
+                                    android:src="@drawable/ic_calendar"
+                                    app:tint="@color/lightOrange" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:text="STAY TERM"
+                                    android:textColor="@color/darkGrey"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/roommateStayDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Short-Term"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:id="@+id/lifestyleProgress"
+                    <!-- Lifestyle -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Lifestyle"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/roommateTags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:chipSpacingHorizontal="2dp"
+                        app:chipSpacingVertical="-8dp"
+                        app:singleLine="false"
+                        app:singleSelection="false">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/roommateTag"
+                            style="@style/Widget.DormMate.ProfileTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/lightGreen"
+                            android:text="Pet-friendly"
+                            android:textColor="@color/green"
+                            app:chipStrokeColor="@color/green" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <!-- Looking for -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Looking for"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/roommateLookingFor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:progress="90"
-                        app:indicatorColor="@color/green"
-                        app:trackColor="@color/chip_bg"
-                        app:trackCornerRadius="3dp"
-                        app:trackThickness="6dp" />
+                        android:text="Women or non-binary roommates • 18-24 • Non-smoker • Okay with occasional guests • Values shared chores"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="12sp" />
 
+                    <!-- Why you match -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_rounded_container"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <TextView
-                            android:id="@+id/matchHomePref"
-                            android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Home preferences "
-                            android:textSize="12sp" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/matchHomePrefPercentage"
-                            android:layout_width="wrap_content"
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Why you match"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/matchLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Excellent fit"
+                                android:textColor="@color/orange"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Budget -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="88%"
-                            android:textColor="@color/green"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/matchBudget"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Budget overlap"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/matchBudgetPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="96%"
+                                android:textColor="@color/green"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/budgetProgress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:progress="96"
+                            app:indicatorColor="@color/green"
+                            app:trackColor="@color/chip_bg"
+                            app:trackCornerRadius="3dp"
+                            app:trackThickness="6dp" />
+
+                        <!-- Lifestyle -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/matchLifestyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Lifestyle rhythm"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/matchLifestylePercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="90%"
+                                android:textColor="@color/green"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/lifestyleProgress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:progress="90"
+                            app:indicatorColor="@color/green"
+                            app:trackColor="@color/chip_bg"
+                            app:trackCornerRadius="3dp"
+                            app:trackThickness="6dp" />
+
+                        <!-- Home preferences -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/matchHomePref"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Home preferences"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/matchHomePrefPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="88%"
+                                android:textColor="@color/green"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/homeprefProgress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:progress="88"
+                            app:indicatorColor="@color/green"
+                            app:trackColor="@color/chip_bg"
+                            app:trackCornerRadius="3dp"
+                            app:trackThickness="6dp" />
+
                     </LinearLayout>
-
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:id="@+id/homeprefProgress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:progress="88"
-                        app:indicatorColor="@color/green"
-                        app:trackColor="@color/chip_bg"
-                        app:trackCornerRadius="3dp"
-                        app:trackThickness="6dp" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
+        </ScrollView>
+
+        <!-- Connect button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConnect"
+                style="@style/Widget.DormMate.Button.Primary"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="Connect with Cathy"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/messages"
+                app:iconGravity="textStart" />
         </LinearLayout>
 
-    </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
-
-        <ImageButton
-            android:id="@+id/btnBookmark"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="@drawable/bg_rounded_container"
-            android:contentDescription="Save"
-            android:src="@drawable/ic_bookmark"
-            app:tint="@color/orange"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnConnect"
-            style="@style/Widget.DormMate.Button.Primary"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="12dp"
-            android:layout_weight="1"
-            android:text="Connect with Cathy"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:cornerRadius="16dp"
-            app:icon="@drawable/messages"
-
-            app:iconGravity="textStart" />
     </LinearLayout>
 
 
-</LinearLayout>
+    <!-- Top bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/circle_button"
+            android:contentDescription="Back"
+            android:padding="12dp"
+            android:src="@drawable/signup_back" />
+
+    </LinearLayout>
+
+</FrameLayout>
