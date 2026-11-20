@@ -419,6 +419,44 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/lifestyleChipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:chipSpacingHorizontal="8dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/earlySleeperChip"
+                    style="@style/Widget.DormMate.Chip.Lifestyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:clickable="false"
+                    android:text="Early sleeper"
+                    android:visibility="gone" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/veryTidyChip"
+                    style="@style/Widget.DormMate.Chip.Lifestyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:clickable="false"
+                    android:text="Very tidy"
+                    android:visibility="gone" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/quietWeekdaysChip"
+                    style="@style/Widget.DormMate.Chip.Lifestyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:clickable="false"
+                    android:text="Quiet weekdays"
+                    android:visibility="gone" />
+            </com.google.android.material.chip.ChipGroup>
+
             <!-- Roommate preferences -->
             <TextView
                 android:layout_width="match_parent"

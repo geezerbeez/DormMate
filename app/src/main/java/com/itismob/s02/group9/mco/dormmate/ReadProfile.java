@@ -2,6 +2,7 @@ package com.itismob.s02.group9.mco.dormmate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,6 +42,10 @@ public class ReadProfile extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.drinkingTv)).setText("Sometimes");
         ((TextView) findViewById(R.id.smokingTv)).setText("No");
+        // placeholder habits; replace with saved data later
+        findViewById(R.id.earlySleeperChip).setVisibility(View.GONE);
+        findViewById(R.id.veryTidyChip).setVisibility(View.VISIBLE);
+        findViewById(R.id.quietWeekdaysChip).setVisibility(View.VISIBLE);
 
         ((TextView) findViewById(R.id.roommateGenderTv)).setText("Any gender");
         ((TextView) findViewById(R.id.roommateAgeTv)).setText("18–24");

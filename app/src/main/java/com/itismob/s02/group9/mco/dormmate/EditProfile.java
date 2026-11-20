@@ -1,5 +1,6 @@
 package com.itismob.s02.group9.mco.dormmate;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
@@ -15,6 +16,7 @@ import androidx.activity.result.PickVisualMediaRequest;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.slider.RangeSlider;
@@ -56,6 +58,8 @@ public class EditProfile extends AppCompatActivity {
     private TextView budgetRangeTv, roommateAgeTv;
     private ChipGroup roommateGenderChipGroup;
 
+    private MaterialCardView earlySleeperCard, veryTidyCard, quietWeekdaysCard;
+
     private ImageView profilePicture, profilePictureEdit;
     private TextView profileProgressTv;
     private LinearProgressIndicator profileProgressBar;
@@ -86,6 +90,9 @@ public class EditProfile extends AppCompatActivity {
         setupDropdown(areaLayout, areaDropdown, AREAS);
         setupDropdown(drinkingLayout, drinkingDropdown, HABIT_OPTIONS);
         setupDropdown(smokingLayout, smokingDropdown, HABIT_OPTIONS);
+        setupHabitCard(earlySleeperCard);
+        setupHabitCard(veryTidyCard);
+        setupHabitCard(quietWeekdaysCard);
         setupBudgetSlider();
         setupRoommateAgeSlider();
         clearErrorOnEdit(ageLayout, ageEt);
@@ -113,6 +120,9 @@ public class EditProfile extends AppCompatActivity {
         areaDropdown = findViewById(R.id.areaDropdown);
         drinkingDropdown = findViewById(R.id.drinkingDropdown);
         smokingDropdown = findViewById(R.id.smokingDropdown);
+        earlySleeperCard = findViewById(R.id.earlySleeperCard);
+        veryTidyCard = findViewById(R.id.veryTidyCard);
+        quietWeekdaysCard = findViewById(R.id.quietWeekdaysCard);
 
         ageEt = findViewById(R.id.ageEt);
         additionalInfoEt = findViewById(R.id.additionalInfoEt);
@@ -143,6 +153,27 @@ public class EditProfile extends AppCompatActivity {
                 dropdown.clearFocus();
             }
         });
+    }
+
+    // Each card toggles on its own, so picking one doesn't unselect the others
+    private void setupHabitCard(MaterialCardView card) {
+        card.setCheckable(true);
+        card.setOnClickListener(v -> card.setChecked(!card.isChecked()));
+        card.setOnCheckedChangeListener((c, checked) -> {
+            c.setCardBackgroundColor(Color.parseColor(checked ? "#DCEFE6" : "#FFFFFF"));
+            c.setStrokeColor(Color.parseColor(checked ? "#2F7D5B" : "#E8E2D9"));
+            ((TextView) c.getChildAt(0))
+                    .setTextColor(Color.parseColor(checked ? "#2F7D5B" : "#000000"));
+        });
+    }
+
+    // Habits are optional and independent, so no validation is needed
+    private List<String> getSelectedHabits() {
+        List<String> habits = new java.util.ArrayList<>();
+        if (earlySleeperCard.isChecked()) habits.add("Early sleeper");
+        if (veryTidyCard.isChecked()) habits.add("Very tidy");
+        if (quietWeekdaysCard.isChecked()) habits.add("Quiet weekdays");
+        return habits;
     }
 
     private void setupBudgetSlider() {
@@ -216,6 +247,7 @@ public class EditProfile extends AppCompatActivity {
         //   drinking / smoking:   drinkingDropdown / smokingDropdown text
         //   roommate gender:      roommateGenderChipGroup.getCheckedChipId() -> chipMan / chipWoman / chipAnyGender
         //   roommate age range:   roommateAgeSlider.getValues()
+        //   lifestyle habits:     getSelectedHabits()
         // TODO: save the profile for mco3
         Toast.makeText(this, "Profile updated!", Toast.LENGTH_SHORT).show();
         finish();
