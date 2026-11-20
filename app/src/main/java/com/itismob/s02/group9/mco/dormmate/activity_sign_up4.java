@@ -14,7 +14,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.flexbox.FlexWrap;
+import com.google.android.flexbox.FlexboxLayoutManager;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 
 
@@ -40,45 +46,19 @@ public class activity_sign_up4 extends AppCompatActivity {
         this.etInterestSearch = findViewById(R.id.etInterestSearch);
         this.btnSkip = findViewById(R.id.btnSkip);
         this.tvInterestError = findViewById(R.id.tvInterestError);
-        this.btnInterest1 = findViewById(R.id.btnInterest1);
-        this.btnInterest2 = findViewById(R.id.btnInterest2);
-        this.btnInterest3 = findViewById(R.id.btnInterest3);
-        this.btnInterest4 = findViewById(R.id.btnInterest4);
-        this.btnInterest5 = findViewById(R.id.btnInterest5);
-        this.btnInterest6 = findViewById(R.id.btnInterest6);
 
-        TextView[] interests = {
-                btnInterest1, btnInterest2, btnInterest3,
-                btnInterest4, btnInterest5, btnInterest6
-        };
+        RecyclerView rvInterests = findViewById(R.id.rvInterests);
 
-        for (TextView interest : interests) {
-            interest.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                    0, 0, R.drawable.ic_interest_add, 0);
-            interest.setContentDescription("Add " + interest.getText());
+        FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(this);
+        layoutManager.setFlexWrap(FlexWrap.WRAP);
+        rvInterests.setLayoutManager(layoutManager);
 
-            interest.setOnClickListener(v -> {
-                boolean selected = !interest.isSelected();
-                interest.setSelected(selected);
+        Interest[] allInterests = InterestDataHelper.getInterests();
+        ArrayList<Interest> data = new ArrayList<>(Arrays.asList(allInterests));
 
-                int icon = selected
-                        ? R.drawable.ic_interest_close_circle
-                        : R.drawable.ic_interest_add;
-                interest.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, icon, 0);
-                interest.setContentDescription(
-                        (selected ? "Remove " : "Add ") + interest.getText());
-
-                if (selected) {
-                    tvInterestError.setVisibility(View.GONE);
-                }
-
-                String query = etInterestSearch.getText().toString()
-                        .trim().toLowerCase(Locale.ROOT);
-                String label = interest.getText().toString().toLowerCase(Locale.ROOT);
-                boolean visible = selected || label.contains(query);
-                interest.setVisibility(visible ? View.VISIBLE : View.GONE);
-            });
-        }
+        InterestAdapter adapter = new InterestAdapter(data);
+        adapter.setOnSelectionChanged(() -> tvInterestError.setVisibility(View.GONE));
+        rvInterests.setAdapter(adapter);
 
         etInterestSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -86,13 +66,7 @@ public class activity_sign_up4 extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String query = s.toString().trim().toLowerCase(Locale.ROOT);
-
-                for (TextView interest : interests) {
-                    String label = interest.getText().toString().toLowerCase(Locale.ROOT);
-                    boolean visible = interest.isSelected() || label.contains(query);
-                    interest.setVisibility(visible ? View.VISIBLE : View.GONE);
-                }
+                adapter.filter(s.toString());
             }
 
             @Override
@@ -102,23 +76,20 @@ public class activity_sign_up4 extends AppCompatActivity {
         btnClearSearch.setOnClickListener(v -> etInterestSearch.setText(""));
 
         btnContinue.setOnClickListener(v -> {
-            boolean missingInterest = true;
+            int selectedCount = adapter.getSelectedCount();
 
-            for (TextView interest : interests) {
-                if (interest.isSelected()) {
-                    missingInterest = false;
-                    break;
-                }
+            if (selectedCount == 5) {
+                tvInterestError.setVisibility(View.GONE);
+
+                Intent intent = new Intent(activity_sign_up4.this, activity_sign_up5.class);
+                startActivity(intent);
+            } else if (selectedCount < 5) {
+                tvInterestError.setText("Please select " + (5 - selectedCount) + " more.");
+                tvInterestError.setVisibility(View.VISIBLE);
+            } else {
+                tvInterestError.setText("Please remove " + (selectedCount - 5) + " to continue.");
+                tvInterestError.setVisibility(View.VISIBLE);
             }
-
-            tvInterestError.setVisibility(missingInterest ? View.VISIBLE : View.GONE);
-
-            if (missingInterest) {
-                return;
-            }
-
-            Intent intent = new Intent(activity_sign_up4.this, activity_sign_up5.class);
-            startActivity(intent);
         });
 
         btnSkip.setOnClickListener(v -> {

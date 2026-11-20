@@ -93,8 +93,16 @@
             android:id="@+id/cbShowPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="0dp"
             android:text="Show Password" />
+
+        <TextView
+            android:id="@+id/tvInvalidCredentials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Invalid Credentials please enter correct password &amp; email"
+            android:textColor="@color/orange"
+            android:visibility="gone"/>
     </LinearLayout>
 
     <ImageButton

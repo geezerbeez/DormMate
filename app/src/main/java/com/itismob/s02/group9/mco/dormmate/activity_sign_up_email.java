@@ -9,12 +9,15 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 
 public class activity_sign_up_email extends AppCompatActivity {
 
@@ -22,7 +25,7 @@ public class activity_sign_up_email extends AppCompatActivity {
     private ImageButton imgbtnEmail;
     private CheckBox cbShowPassword;
 
-    private TextView tvEmptyEmail, tvEmptyPassword;
+    private TextView tvEmptyEmail, tvEmptyPassword, tvInvalidCredentials;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ public class activity_sign_up_email extends AppCompatActivity {
         this.cbShowPassword = findViewById(R.id.cbShowPassword);
         this.tvEmptyEmail = findViewById(R.id.tvEmptyEmail);
         this.tvEmptyPassword = findViewById(R.id.tvEmptyPassword);
+        this.tvInvalidCredentials = findViewById(R.id.tvInvalidCredentials);
 
         cbShowPassword.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -52,12 +56,12 @@ public class activity_sign_up_email extends AppCompatActivity {
 
         imgbtnEmail.setOnClickListener(v -> {
             String email = etEmailEntry.getText().toString().trim();
-            String password = etPasswordEntry.getText().toString().trim();
+            String password = etPasswordEntry.getText().toString();
 
 
             boolean missingEmail = email.isEmpty();
             boolean missingPassword = password.isEmpty();
-            boolean validFormat = Patterns.EMAIL_ADDRESS.matcher(email).matches();
+
 
 
             tvEmptyPassword.setVisibility(missingPassword ? View.VISIBLE : View.GONE);
@@ -65,19 +69,29 @@ public class activity_sign_up_email extends AppCompatActivity {
             if (missingEmail) {
                 tvEmptyEmail.setText("Enter your email address");
                 tvEmptyEmail.setVisibility(View.VISIBLE);
-            } else if (!validFormat) {
-                tvEmptyEmail.setText("Enter a valid email address");
-                tvEmptyEmail.setVisibility(View.VISIBLE);
-            } else {
+            }
+            else {
                 tvEmptyEmail.setVisibility(View.GONE);
             }
 
-            if(missingEmail || missingPassword){
+            if (missingEmail || missingPassword) {
                 return;
             }
 
-            Intent intent = new Intent(activity_sign_up_email.this, activity_sign_up3.class);
-            startActivity(intent);
+            imgbtnEmail.setEnabled(false);
+            FirebaseAuth.getInstance()
+                    .createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, task -> {
+                        imgbtnEmail.setEnabled(true);
+                        if (task.isSuccessful()) {
+                            Intent intent = new Intent(activity_sign_up_email.this, activity_sign_up3.class);
+                            startActivity(intent);
+                        }
+                        else{
+                            tvInvalidCredentials.setVisibility(View.VISIBLE);
+                        }
+
+                    });
 
 
 
