@@ -53,6 +53,16 @@
             android:name=".ProfileFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DormDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LandlordDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddEditListingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
