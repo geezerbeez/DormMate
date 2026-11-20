@@ -26,9 +26,9 @@ public class ReadProfile extends AppCompatActivity {
     // placeholder data rn; replace with saved data later
     private void showProfile() {
         ((TextView) findViewById(R.id.nameTv)).setText("Maya Santos");
-        ((ShapeableImageView) findViewById(R.id.profilePicture)).setImageResource(R.drawable.catpfp);
-        ((TextView) findViewById(R.id.profileProgressTv)).setText("Profile 85% complete");
-        ((LinearProgressIndicator) findViewById(R.id.profileProgressBar)).setProgress(85);
+        ((ShapeableImageView) findViewById(R.id.profilePicture)).setImageResource(R.drawable.mayasantospfp);
+        ((TextView) findViewById(R.id.profileProgressTv)).setText("Profile 100% complete");
+        ((LinearProgressIndicator) findViewById(R.id.profileProgressBar)).setProgress(100);
 
         ((TextView) findViewById(R.id.genderTv)).setText("Woman");
         ((TextView) findViewById(R.id.ageTv)).setText("20");

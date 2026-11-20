@@ -136,6 +136,13 @@ public class EditProfile extends AppCompatActivity {
         dropdown.setAdapter(new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, options));
         clearErrorOnEdit(layout, dropdown);
+
+        // if the menu closes with nothing chosen, drop focus so the hint returns
+        dropdown.setOnDismissListener(() -> {
+            if (dropdown.getText().toString().trim().isEmpty()) {
+                dropdown.clearFocus();
+            }
+        });
     }
 
     private void setupBudgetSlider() {
@@ -174,7 +181,7 @@ public class EditProfile extends AppCompatActivity {
 
     private void setupProfilePhoto() {
         // Placeholders until real profile data is loaded
-        profilePicture.setImageResource(R.drawable.catpfp);
+        profilePicture.setImageResource(R.drawable.mayasantospfp);
         ((TextView) findViewById(R.id.nameTv)).setText("Maya Santos");
 
         View.OnClickListener pickPhoto = v -> photoPicker.launch(
