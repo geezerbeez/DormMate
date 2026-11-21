@@ -1,43 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/cream"
-    tools:context=".SignUp2">
-
+    tools:context=".activity_sign_up_email"
+    android:background="@color/cream">
     <View
         android:layout_width="288dp"
         android:layout_height="496dp"
         android:layout_marginStart="150dp"
         android:layout_marginTop="60dp"
-        android:background="@drawable/bg_deco" />
+        android:background="@drawable/bg_deco"
+        android:layout_marginRight="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:paddingTop="30dp"
+        >
 
         <TextView
             android:id="@+id/activity_email_heading"
-            android:layout_width="311dp"
+            android:layout_width="243dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Can we get your email?"
             android:textSize="45dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"/>
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="3dp"
             android:text="Your basic and personal information" />
         <TextView
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+
             android:layout_marginTop="20dp"
             android:text="Email"
             android:textStyle="bold"
@@ -46,16 +51,22 @@
         <EditText
             android:id="@+id/etEmailEntry"
             style="@style/SignUpInput"
-            android:layout_width="382dp"
+            android:layout_width="350dp"
             android:autofillHints="personGivenName"
             android:hint="Enter your Email Address"
             android:imeOptions="actionNext"
-            android:inputType="textPersonName|textCapWords"
-            android:layout_marginLeft="20dp"/>
+            android:inputType="textEmailAddress"
+            />
+        <TextView
+            android:id="@+id/tvEmptyEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Email is Missing"
+            android:textColor="@color/orange"
+            android:visibility="gone"/>
         <TextView
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:text="Password"
             android:textStyle="bold"
@@ -64,20 +75,48 @@
         <EditText
             android:id="@+id/etPasswordEntry"
             style="@style/SignUpInput"
-            android:layout_width="382dp"
+            android:layout_width="350dp"
             android:autofillHints="personGivenName"
             android:hint="Enter your desired Password"
             android:imeOptions="actionNext"
-            android:inputType="textPersonName|textCapWords"
-            android:layout_marginLeft="20dp"/>
+            android:inputType="textPassword"
+            />
+        <TextView
+            android:id="@+id/tvEmptyPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Password is Missing"
+            android:textColor="@color/orange"
+            android:visibility="gone"/>
 
         <CheckBox
             android:id="@+id/cbShowPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:text="CheckBox" />
+            android:layout_marginTop="0dp"
+            android:text="Show Password" />
+
+        <TextView
+            android:id="@+id/tvInvalidCredentials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Invalid Credentials please enter correct password &amp; email"
+            android:textColor="@color/orange"
+            android:visibility="gone"/>
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imgbtnEmail"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#000000"
+        android:src="@drawable/ic_continue"
+        android:scaleType="centerInside"
+        android:padding="12dp"
+        android:contentDescription="Continue" />
 
 </FrameLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_sign_up4"
+    android:background="@color/cream">
+    <View
+        android:layout_width="288dp"
+        android:layout_height="496dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bg_deco" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="40dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose 5\nthings you’re\nreally into"
+                android:textColor="@color/black"
+                android:textSize="44sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="This would help your future DorMates match with you with things you love."
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvInterestError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="*Error Please select 5 things you're into\nyou may also opt to skip"
+                android:textColor="@color/orange"
+                android:textSize="10sp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/interest_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:importantForAccessibility="no"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:tint="@color/black" />
+
+                <EditText
+                    android:id="@+id/etInterestSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:background="@null"
+                    android:hint="What are you into?"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:padding="0dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="#888888"
+                    android:textSize="17sp"
+                    android:autofillHints=""
+                    tools:ignore="LabelFor" />
+
+                <ImageButton
+                    android:id="@+id/btnClearSearch"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Clear search"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_interest_close" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="You might like..."
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvInterests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                tools:itemCount="6"
+                tools:listitem="@layout/activity_interest_rv" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/btnSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="24dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:paddingHorizontal="12dp"
+        android:text="Skip"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <ImageButton
+        android:id="@+id/btnContinue"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="@color/black"
+        android:contentDescription="Continue"
+        android:padding="16dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_continue"
+        android:tint="@android:color/white" />
+
+</FrameLayout>
