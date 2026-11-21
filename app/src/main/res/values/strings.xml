@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DormMate</string>
+    <string name="messages_title">Chats</string>
+    <string name="messages_empty">No chats found</string>
+    <string name="search_hint">Search</string>
+    <string name="message_hint">Aa</string>
+    <string name="send">Send</string>
+    <string name="back">Back</string>
+    <string name="call">Voice call</string>
+    <string name="video_call">Video call</string>
 </resources>

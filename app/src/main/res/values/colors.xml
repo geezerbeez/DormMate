@@ -17,4 +17,9 @@
     <!-- Bottom Navigation -->
     <color name="nav_indicator">#FFF3F0</color>
     <color name="nav_gray">#999999</color>
+    <color name="msgr_blue">#0084FF</color>
+    <color name="msgr_gray">#E4E6EB</color>
+    <color name="msgr_input">#F0F2F5</color>
+    <color name="msgr_text">#050505</color>
+    <color name="msgr_sub">#65676B</color>
 </resources>
