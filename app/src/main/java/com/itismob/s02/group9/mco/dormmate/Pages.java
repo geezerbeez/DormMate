@@ -1,8 +1,10 @@
 package com.itismob.s02.group9.mco.dormmate;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -12,6 +14,9 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Pages extends AppCompatActivity {
+
+    public static final String EXTRA_OPEN_TAB = "open_tab";
+    private BottomNavigationView nav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,7 @@ public class Pages extends AppCompatActivity {
             return insets;
         });
 
-        BottomNavigationView nav = findViewById(R.id.bottomNavigationView);
+        nav = findViewById(R.id.bottomNavigationView);
 
         nav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
@@ -34,7 +39,7 @@ public class Pages extends AppCompatActivity {
             if (id == R.id.nav_explore) {
                 fragment = new ExploreFragment();
             } else if (id == R.id.nav_roommate) {
-                fragment = new RoommateFragment();
+                fragment = new RoommateDiscoveryFragment();
             } else if (id == R.id.nav_messages) {
                 fragment = new MessagesFragment();
             } else if (id == R.id.nav_profile) {
@@ -50,9 +55,23 @@ public class Pages extends AppCompatActivity {
             return true;
         });
 
-        // Show the first tab on a fresh launch only
         if (savedInstanceState == null) {
             nav.setSelectedItemId(R.id.nav_explore);
+        }
+
+        handleTabIntent(getIntent());
+    }
+
+    @Override
+    protected void onNewIntent(@NonNull Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleTabIntent(intent);
+    }
+
+    private void handleTabIntent(Intent intent) {
+        if ("messages".equals(intent.getStringExtra(EXTRA_OPEN_TAB))) {
+            nav.setSelectedItemId(R.id.nav_messages);
         }
     }
 }

@@ -2,6 +2,7 @@
 <resources>
     <color name="transparent">#00000000</color>
     <color name="black">#000000</color>
+    <color name="darkGrey">#8A8686</color>
     <color name="grey">#c2c0c0</color>
     <color name="lightGrey">#f8f4ee</color>
     <color name="white">#ffffff</color>
@@ -9,6 +10,9 @@
     <color name="darkCream">#eddfd2</color>
     <color name="lightOrange">#fc886d</color>
     <color name="orange">#ed6445</color>
+    <color name="green">#1a744b</color>
+    <color name="lightGreen">#eefaf3</color>
+    <color name="chip_bg">#DCEFE9</color>
 
     <!-- Bottom Navigation -->
     <color name="nav_indicator">#FFF3F0</color>
