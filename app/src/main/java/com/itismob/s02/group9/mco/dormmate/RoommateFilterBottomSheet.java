@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
-public class FilterBottomSheet extends BottomSheetDialogFragment {
+public class RoommateFilterBottomSheet extends BottomSheetDialogFragment {
 
     public static final String REQUEST_KEY = "roommate_filter";
     public static final String RESULT_FILTER = "filter";
@@ -38,8 +38,8 @@ public class FilterBottomSheet extends BottomSheetDialogFragment {
     private RangeSlider ageSlider, budgetSlider;
     private TextView ageLabel, budgetLabel;
 
-    public static FilterBottomSheet newInstance(RoommateFilter current) {
-        FilterBottomSheet sheet = new FilterBottomSheet();
+    public static RoommateFilterBottomSheet newInstance(RoommateFilter current) {
+        RoommateFilterBottomSheet sheet = new RoommateFilterBottomSheet();
         Bundle args = new Bundle();
         args.putSerializable(ARG_FILTER, current);
         sheet.setArguments(args);
@@ -50,7 +50,7 @@ public class FilterBottomSheet extends BottomSheetDialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.bottom_sheet_filter, container, false);
+        return inflater.inflate(R.layout.roommate_bottom_sheet_filter, container, false);
     }
 
     @Override

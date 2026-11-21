@@ -86,12 +86,12 @@ public class RoommateDiscoveryFragment extends Fragment {
 
         // Filters
         filterBtn.setOnClickListener(v ->
-                FilterBottomSheet.newInstance(filter).show(getChildFragmentManager(), "filter"));
+                RoommateFilterBottomSheet.newInstance(filter).show(getChildFragmentManager(), "filter"));
 
         getChildFragmentManager().setFragmentResultListener(
-                FilterBottomSheet.REQUEST_KEY, getViewLifecycleOwner(), (key, bundle) -> {
+                RoommateFilterBottomSheet.REQUEST_KEY, getViewLifecycleOwner(), (key, bundle) -> {
                     RoommateFilter result =
-                            (RoommateFilter) bundle.getSerializable(FilterBottomSheet.RESULT_FILTER);
+                            (RoommateFilter) bundle.getSerializable(RoommateFilterBottomSheet.RESULT_FILTER);
                     if (result != null) {
                         filter = result;
                         applyFilter();
@@ -148,10 +148,10 @@ public class RoommateDiscoveryFragment extends Fragment {
             return true;
         });
 
-        MatchManager.resetLikes();
+        RoommateMatchManager.resetLikes();
 
         // Simulate user_002 already liking user_001
-        MatchManager.simulateLike("user_002", "user_001");
+        RoommateMatchManager.simulateLike("user_002", "user_001");
     }
 
     private void applyFilter() {
@@ -222,7 +222,7 @@ public class RoommateDiscoveryFragment extends Fragment {
         String currentUserId = "user_001"; // Replace with logged-in user ID
         String targetUserId = roommate.id;
 
-        boolean isMatch = MatchManager.likeUser(
+        boolean isMatch = RoommateMatchManager.likeUser(
                 currentUserId,
                 targetUserId
         );
@@ -273,7 +273,7 @@ public class RoommateDiscoveryFragment extends Fragment {
     private void showMatchDialog(Roommate roommate) {
 
         View dialogView = getLayoutInflater()
-                .inflate(R.layout.dialog_match, null);
+                .inflate(R.layout.roommate_dialog_match, null);
 
         ImageView myImage = dialogView.findViewById(R.id.myMatchImage);
 

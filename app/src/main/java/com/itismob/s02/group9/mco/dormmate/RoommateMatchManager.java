@@ -3,7 +3,7 @@ package com.itismob.s02.group9.mco.dormmate;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MatchManager {
+public class RoommateMatchManager {
 
     private static final Set<String> likes = new HashSet<>();
 
