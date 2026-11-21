@@ -108,7 +108,7 @@
                             android:layout_width="18dp"
                             android:layout_height="18dp"
                             android:importantForAccessibility="no"
-                            android:src="@drawable/ic_location"
+                            android:src="@drawable/ic_dorm_pin"
                             app:tint="@color/inkSoft" />
 
                         <TextView

@@ -2,8 +2,8 @@
 
     <!-- Selectable filter chip (orange when checked) -->
     <style name="Widget.DormMate.Chip" parent="Widget.Material3.Chip.Filter">
-        <item name="chipBackgroundColor">@color/chip_bg</item>
-        <item name="android:textColor">@color/chip_text</item>
+        <item name="chipBackgroundColor">@color/chip_dorm_bg</item>
+        <item name="android:textColor">@color/chip_dorm_text</item>
         <item name="chipStrokeColor">@color/orange</item>
         <item name="chipStrokeWidth">1dp</item>
         <item name="chipCornerRadius">20dp</item>

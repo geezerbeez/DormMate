@@ -84,7 +84,7 @@
                 android:layout_height="52dp"
                 android:background="@drawable/bg_filter_btn"
                 android:contentDescription="Filter dormitories"
-                android:src="@drawable/ic_filter"
+                android:src="@drawable/ic_dorm_filter"
                 app:tint="@color/white" />
 
             <TextView
