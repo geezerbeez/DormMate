@@ -54,12 +54,28 @@ public class RoommateProfileActivity extends AppCompatActivity {
         bind(roommate);
 
         btnConnect.setOnClickListener(v -> {
+<<<<<<< Updated upstream
 
             Intent intent = new Intent(this, Pages.class);
             intent.putExtra(Pages.EXTRA_OPEN_TAB, "messages");
             // TODO: also pass roommate.id so Messages can open a chat with this person
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
+=======
+            // Chat with the person whose profile this is (reuses an existing chat if any).
+            Conversation chat = MessageStore.get()
+                    .getOrCreateConversation(roommate.id, roommate.name);
+
+            // Put the Messages tab underneath so Back from the chat lands there.
+            Intent pages = new Intent(this, Pages.class);
+            pages.putExtra(Pages.EXTRA_OPEN_TAB, "messages");
+            pages.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(pages);
+
+            Intent chatIntent = new Intent(this, ChatActivity.class);
+            chatIntent.putExtra(ChatActivity.EXTRA_CONVERSATION_ID, chat.getId());
+            startActivity(chatIntent);
+>>>>>>> Stashed changes
         });
     }
 

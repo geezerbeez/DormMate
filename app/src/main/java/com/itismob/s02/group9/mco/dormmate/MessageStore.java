@@ -6,10 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * In-memory message store with sample data. Swap the internals for Room or
- * Firebase later; the rest of the UI only talks to this class.
- */
 public class MessageStore {
     private static MessageStore instance;
 
@@ -69,6 +65,22 @@ public class MessageStore {
 
     public Conversation getConversation(String id) {
         return conversations.get(id);
+    }
+
+    /**
+     * Returns the chat with this person, creating an empty one the first time.
+     * Use the person's own id (e.g. the roommate id) so pressing "Connect" twice
+     * reopens the same chat instead of making a duplicate.
+     */
+    public Conversation getOrCreateConversation(String id, String name) {
+        Conversation existing = conversations.get(id);
+        if (existing != null) return existing;
+
+        Conversation c = new Conversation(id, name, null);
+        c.update("Say hi to " + name + "!", System.currentTimeMillis(), false);
+        conversations.put(id, c);
+        messages.put(id, new ArrayList<>());
+        return c;
     }
 
     /** Live list; the chat adapter notifies on changes after send(). */
