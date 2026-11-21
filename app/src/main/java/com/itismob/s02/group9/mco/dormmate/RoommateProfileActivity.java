@@ -1,7 +1,5 @@
 package com.itismob.s02.group9.mco.dormmate;
 
-import static android.system.Os.bind;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -56,9 +54,11 @@ public class RoommateProfileActivity extends AppCompatActivity {
         bind(roommate);
 
         btnConnect.setOnClickListener(v -> {
+            // Chat with the person whose profile this is (reuses an existing chat if any).
             Conversation chat = MessageStore.get()
                     .getOrCreateConversation(roommate.id, roommate.name);
 
+            // Put the Messages tab underneath so Back from the chat lands there.
             Intent pages = new Intent(this, Pages.class);
             pages.putExtra(Pages.EXTRA_OPEN_TAB, "messages");
             pages.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -68,6 +68,7 @@ public class RoommateProfileActivity extends AppCompatActivity {
             chatIntent.putExtra(ChatActivity.EXTRA_CONVERSATION_ID, chat.getId());
             startActivity(chatIntent);
         });
+    }
 
     private void bind(Roommate r) {
         ((ImageView) findViewById(R.id.roommateImage)).setImageResource(r.photoRes);
