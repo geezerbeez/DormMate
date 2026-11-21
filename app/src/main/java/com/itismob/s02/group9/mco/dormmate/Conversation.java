@@ -7,19 +7,22 @@ public class Conversation {
 
     private final String id;
     private final String name;
+    private final String phone;
     private String lastMessage = "";
     private long lastTimestamp = 0;
     private boolean lastFromMe = false;
     private int unreadCount = 0;
     private boolean active = false;
 
-    public Conversation(String id, String name) {
+    public Conversation(String id, String name, String phone) {
         this.id = id;
         this.name = name;
+        this.phone = phone;
     }
 
     public String getId() { return id; }
     public String getName() { return name; }
+    public String getPhone() { return phone; }
     public String getLastMessage() { return lastMessage; }
     public long getLastTimestamp() { return lastTimestamp; }
     public boolean isLastFromMe() { return lastFromMe; }

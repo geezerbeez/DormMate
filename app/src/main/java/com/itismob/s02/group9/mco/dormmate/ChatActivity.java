@@ -1,6 +1,9 @@
 package com.itismob.s02.group9.mco.dormmate;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -56,11 +59,9 @@ public class ChatActivity extends AppCompatActivity {
         avatar.setBackgroundTintList(ColorStateList.valueOf(conversation.getAvatarColor()));
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
-        String notReady = "Calls aren't available yet";
-        findViewById(R.id.btnCall).setOnClickListener(
-                v -> Toast.makeText(this, notReady, Toast.LENGTH_SHORT).show());
-        findViewById(R.id.btnVideo).setOnClickListener(
-                v -> Toast.makeText(this, notReady, Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnCall).setOnClickListener(v -> dial(conversation));
+        findViewById(R.id.btnVideo).setOnClickListener(v -> Toast.makeText(
+                this, "Video calls aren't available yet", Toast.LENGTH_SHORT).show());
 
         rvMessages = findViewById(R.id.rvMessages);
         LinearLayoutManager lm = new LinearLayoutManager(this);
@@ -79,6 +80,21 @@ public class ChatActivity extends AppCompatActivity {
             @Override public void afterTextChanged(Editable s) { updateSendEnabled(); }
         });
         btnSend.setOnClickListener(v -> sendMessage());
+    }
+
+    /** Opens the phone app with the number filled in; the user presses call there. */
+    private void dial(Conversation conversation) {
+        String phone = conversation.getPhone();
+        if (phone == null || phone.isEmpty()) {
+            Toast.makeText(this, "No phone number for " + conversation.getName(),
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
+        try {
+            startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null)));
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, "No phone app found on this device", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void sendMessage() {

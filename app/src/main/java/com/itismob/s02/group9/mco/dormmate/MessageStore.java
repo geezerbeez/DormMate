@@ -25,16 +25,16 @@ public class MessageStore {
         long now = System.currentTimeMillis();
         long min = 60_000L, hour = 60 * min, day = 24 * hour;
 
-        seed("1", "Ana Santos", 1, new Object[][]{
+        seed("1", "Ana Santos", "+639170000001", 1, new Object[][]{
                 {"Hi! Saw your roommate profile, are you still looking?", false, now - 3 * hour},
                 {"Yes! I'm looking for a place near campus.", true, now - 2 * hour - 50 * min},
                 {"Great, I have a free slot in a 2-person dorm. Want to see photos?", false, now - 2 * hour - 45 * min},
         });
-        seed("2", "Miguel Dela Cruz", 0, new Object[][]{
+        seed("2", "Miguel Dela Cruz", "+639170000002", 0, new Object[][]{
                 {"What time works for the viewing tomorrow?", false, now - day - hour},
                 {"Anytime after 2 PM works for me.", true, now - day},
         });
-        seed("3", "Housing Office", 2, new Object[][]{
+        seed("3", "Housing Office", "+639170000003", 2, new Object[][]{
                 {"Your reservation inquiry has been received.", false, now - 3 * day},
                 {"Please bring a valid ID during the visit.", false, now - 3 * day + min},
         });
@@ -47,8 +47,8 @@ public class MessageStore {
         conversations.get("2").setActive(true);
     }
 
-    private void seed(String id, String name, int unread, Object[][] rows) {
-        Conversation c = new Conversation(id, name);
+    private void seed(String id, String name, String phone, int unread, Object[][] rows) {
+        Conversation c = new Conversation(id, name, phone);
         List<ChatMessage> list = new ArrayList<>();
         for (Object[] r : rows) {
             list.add(new ChatMessage((String) r[0], (Boolean) r[1], (Long) r[2]));
