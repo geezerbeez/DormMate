@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text -->
+    <color name="ink">#1B1B1B</color>
+    <color name="inkSoft">#6B625B</color>
+
+    <!-- Listing status colors -->
+    <color name="statusGreen">#2E9E5B</color>
+    <color name="statusGreenBg">#E3F5EA</color>
+    <color name="statusOrange">#C4502F</color>
+    <color name="statusOrangeBg">#FFE7DF</color>
+    <color name="statusGrey">#6F6F6F</color>
+    <color name="statusGreyBg">#ECECEC</color>
+
+    <color name="scrim">#66000000</color>
+</resources>
