@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:stepSize="1"
-            android:valueFrom="18"
+            android:valueFrom="17"
             android:valueTo="30"
             app:thumbColor="@color/orange"
             app:trackColorActive="@color/orange"
