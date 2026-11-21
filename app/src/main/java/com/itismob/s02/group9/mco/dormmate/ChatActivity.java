@@ -1,11 +1,13 @@
 package com.itismob.s02.group9.mco.dormmate;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,8 +51,16 @@ public class ChatActivity extends AppCompatActivity {
         store.markRead(conversationId);
 
         ((TextView) findViewById(R.id.tvChatName)).setText(conversation.getName());
-        ((TextView) findViewById(R.id.tvChatAvatar)).setText(conversation.getInitial());
+        TextView avatar = findViewById(R.id.tvChatAvatar);
+        avatar.setText(conversation.getInitial());
+        avatar.setBackgroundTintList(ColorStateList.valueOf(conversation.getAvatarColor()));
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
+
+        String notReady = "Calls aren't available yet";
+        findViewById(R.id.btnCall).setOnClickListener(
+                v -> Toast.makeText(this, notReady, Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnVideo).setOnClickListener(
+                v -> Toast.makeText(this, notReady, Toast.LENGTH_SHORT).show());
 
         rvMessages = findViewById(R.id.rvMessages);
         LinearLayoutManager lm = new LinearLayoutManager(this);

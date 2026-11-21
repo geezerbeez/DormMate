@@ -13,6 +13,7 @@ import java.util.List;
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.VH> {
     private static final int TYPE_SENT = 0;
     private static final int TYPE_RECEIVED = 1;
+    private static final long SEPARATOR_GAP_MS = 15 * 60 * 1000L;
 
     private final List<ChatMessage> items;
 
@@ -36,7 +37,12 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.VH> {
     public void onBindViewHolder(@NonNull VH h, int position) {
         ChatMessage m = items.get(position);
         h.text.setText(m.getText());
-        h.time.setText(ConversationAdapter.formatTime(m.getTimestamp()));
+
+        // Messenger-style: show a centered time only when there's a long gap.
+        boolean showTime = position == 0
+                || m.getTimestamp() - items.get(position - 1).getTimestamp() > SEPARATOR_GAP_MS;
+        h.time.setVisibility(showTime ? View.VISIBLE : View.GONE);
+        if (showTime) h.time.setText(ConversationAdapter.formatSeparator(m.getTimestamp()));
     }
 
     @Override

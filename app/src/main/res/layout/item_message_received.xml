@@ -3,29 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="start"
     android:orientation="vertical"
     android:paddingHorizontal="12dp"
-    android:paddingVertical="4dp">
+    android:paddingVertical="2dp">
+
+    <TextView
+        android:id="@+id/tvMessageTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="8dp"
+        android:textColor="@color/msgr_sub"
+        android:textSize="12sp"
+        android:visibility="gone"
+        tools:text="2:15 PM" />
 
     <TextView
         android:id="@+id/tvMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="start"
         android:background="@drawable/bg_bubble_received"
         android:maxWidth="280dp"
-        android:padding="12dp"
-        android:textColor="@color/black"
-        android:textSize="15sp"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="9dp"
+        android:textColor="@color/msgr_text"
+        android:textSize="16sp"
         tools:text="Hi! Saw your roommate profile, are you still looking?" />
-
-    <TextView
-        android:id="@+id/tvMessageTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="2dp"
-        android:textColor="@color/nav_gray"
-        android:textSize="11sp"
-        tools:text="3:15 PM" />
 </LinearLayout>
