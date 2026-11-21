@@ -96,12 +96,24 @@ public class LogIn extends AppCompatActivity {
             }
         });
 
+        // TODO: once accounts have a role (student / dorm owner) from Firebase, route by role
+        // after login instead of using this shortcut.
+        findViewById(R.id.dormOwnerTv).setOnClickListener(v ->
+                startActivity(new Intent(LogIn.this, LandlordDashboardActivity.class)));
+
         createAccTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LogIn.this, SignUp.class);
                 startActivity(intent);
             }
+        });
+
+        loginBtn.setOnClickListener(v -> {
+            // TODO: validate email/password (call authentication) first
+            Intent intent = new Intent(LogIn.this, Pages.class);
+            startActivity(intent);
+            finish(); // so Back doesn't return to the login screen
         });
     }
 }
