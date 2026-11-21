@@ -2,7 +2,6 @@ package com.itismob.s02.group9.mco.dormmate;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
@@ -54,9 +53,7 @@ public class ChatActivity extends AppCompatActivity {
         store.markRead(conversationId);
 
         ((TextView) findViewById(R.id.tvChatName)).setText(conversation.getName());
-        TextView avatar = findViewById(R.id.tvChatAvatar);
-        avatar.setText(conversation.getInitial());
-        avatar.setBackgroundTintList(ColorStateList.valueOf(conversation.getAvatarColor()));
+        AvatarLoader.bind(findViewById(R.id.tvChatAvatar), conversation);
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
         findViewById(R.id.btnCall).setOnClickListener(v -> dial(conversation));

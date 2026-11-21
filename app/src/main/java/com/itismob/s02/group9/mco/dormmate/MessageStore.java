@@ -6,6 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * In-memory message store with sample data. Swap the internals for Room or
+ * Firebase later; the rest of the UI only talks to this class.
+ */
 public class MessageStore {
     private static MessageStore instance;
 
@@ -73,10 +77,19 @@ public class MessageStore {
      * reopens the same chat instead of making a duplicate.
      */
     public Conversation getOrCreateConversation(String id, String name) {
+        return getOrCreateConversation(id, name, 0);
+    }
+
+    /** Same, and also attaches the person's profile photo (drawable id) to the chat. */
+    public Conversation getOrCreateConversation(String id, String name, int photoRes) {
         Conversation existing = conversations.get(id);
-        if (existing != null) return existing;
+        if (existing != null) {
+            if (photoRes != 0 && existing.getPhotoRes() == 0) existing.setPhotoRes(photoRes);
+            return existing;
+        }
 
         Conversation c = new Conversation(id, name, null);
+        c.setPhotoRes(photoRes);
         c.update("Say hi to " + name + "!", System.currentTimeMillis(), false);
         conversations.put(id, c);
         messages.put(id, new ArrayList<>());
