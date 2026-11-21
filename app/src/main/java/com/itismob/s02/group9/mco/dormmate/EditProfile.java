@@ -212,7 +212,7 @@ public class EditProfile extends AppCompatActivity {
 
     private void setupProfilePhoto() {
         // Placeholders until real profile data is loaded
-        profilePicture.setImageResource(R.drawable.mayasantospfp);
+        profilePicture.setImageResource(R.drawable.img_roommateprofile);
         ((TextView) findViewById(R.id.nameTv)).setText("Maya Santos");
 
         View.OnClickListener pickPhoto = v -> photoPicker.launch(
