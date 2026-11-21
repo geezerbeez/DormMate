@@ -108,12 +108,6 @@ public class LogIn extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        loginBtn.setOnClickListener(v -> {
-            // TODO: validate email/password (call authentication) first
-            Intent intent = new Intent(LogIn.this, Pages.class);
-            startActivity(intent);
-            finish(); // so Back doesn't return to the login screen
-        });
+        
     }
 }
