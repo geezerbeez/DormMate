@@ -13,6 +13,7 @@ public class Conversation {
     private boolean lastFromMe = false;
     private int unreadCount = 0;
     private boolean active = false;
+    private int photoRes = 0; // drawable id of a profile photo, 0 = none (show initial)
 
     public Conversation(String id, String name, String phone) {
         this.id = id;
@@ -28,6 +29,7 @@ public class Conversation {
     public boolean isLastFromMe() { return lastFromMe; }
     public int getUnreadCount() { return unreadCount; }
     public boolean isActive() { return active; }
+    public int getPhotoRes() { return photoRes; }
 
     public String getFirstName() {
         int space = name.indexOf(' ');
@@ -50,4 +52,5 @@ public class Conversation {
 
     void setUnreadCount(int unreadCount) { this.unreadCount = unreadCount; }
     void setActive(boolean active) { this.active = active; }
+    void setPhotoRes(int photoRes) { this.photoRes = photoRes; }
 }

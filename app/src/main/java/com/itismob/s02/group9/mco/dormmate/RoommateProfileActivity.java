@@ -1,8 +1,7 @@
 package com.itismob.s02.group9.mco.dormmate;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,7 +22,6 @@ public class RoommateProfileActivity extends AppCompatActivity {
     public static final String EXTRA_ROOMMATE_ID = "roommate_id";
 
     private ImageButton btnBack;
-    private Button btnConnect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +37,10 @@ public class RoommateProfileActivity extends AppCompatActivity {
         });
 
         btnBack = findViewById(R.id.btnBack);
-        btnConnect = findViewById(R.id.btnConnect);
         btnBack.setOnClickListener(v -> finish());
+
+        View connectBar = (View) findViewById(R.id.btnConnect).getParent();
+        connectBar.setVisibility(View.GONE);
 
 
         String id = getIntent().getStringExtra(EXTRA_ROOMMATE_ID);
@@ -53,14 +53,6 @@ public class RoommateProfileActivity extends AppCompatActivity {
 
         bind(roommate);
 
-        btnConnect.setOnClickListener(v -> {
-
-            Intent intent = new Intent(this, Pages.class);
-            intent.putExtra(Pages.EXTRA_OPEN_TAB, "messages");
-            // TODO: also pass roommate.id so Messages can open a chat with this person
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
-        });
     }
 
     private void bind(Roommate r) {
@@ -94,8 +86,6 @@ public class RoommateProfileActivity extends AppCompatActivity {
         setProgress(R.id.budgetProgress, R.id.matchBudgetPercentage, r.budgetMatch);
         setProgress(R.id.lifestyleProgress, R.id.matchLifestylePercentage, r.lifestyleMatch);
         setProgress(R.id.homeprefProgress, R.id.matchHomePrefPercentage, r.homeMatch);
-
-        btnConnect.setText("Connect with " + r.name);
     }
 
     private void setText(int viewId, String text) {

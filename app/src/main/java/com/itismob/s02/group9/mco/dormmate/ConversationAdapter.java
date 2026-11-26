@@ -1,6 +1,5 @@
 package com.itismob.s02.group9.mco.dormmate;
 
-import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
@@ -49,8 +48,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
         Conversation c = items.get(position);
         boolean unread = c.getUnreadCount() > 0;
 
-        h.avatar.setText(c.getInitial());
-        h.avatar.setBackgroundTintList(ColorStateList.valueOf(c.getAvatarColor()));
+        AvatarLoader.bind(h.avatar, c);
         h.name.setText(c.getName());
 
         String msg = c.getLastMessage();
