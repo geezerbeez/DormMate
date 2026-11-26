@@ -91,6 +91,9 @@
             android:name=".AddEditListingActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
     </application>
 
 </manifest>
