@@ -71,6 +71,31 @@ public class MessageStore {
         return conversations.get(id);
     }
 
+    /**
+     * Returns the chat with this person, creating an empty one the first time.
+     * Use the person's own id (e.g. the roommate id) so pressing "Connect" twice
+     * reopens the same chat instead of making a duplicate.
+     */
+    public Conversation getOrCreateConversation(String id, String name) {
+        return getOrCreateConversation(id, name, 0);
+    }
+
+    /** Same, and also attaches the person's profile photo (drawable id) to the chat. */
+    public Conversation getOrCreateConversation(String id, String name, int photoRes) {
+        Conversation existing = conversations.get(id);
+        if (existing != null) {
+            if (photoRes != 0 && existing.getPhotoRes() == 0) existing.setPhotoRes(photoRes);
+            return existing;
+        }
+
+        Conversation c = new Conversation(id, name, null);
+        c.setPhotoRes(photoRes);
+        c.update("Say hi to " + name + "!", System.currentTimeMillis(), false);
+        conversations.put(id, c);
+        messages.put(id, new ArrayList<>());
+        return c;
+    }
+
     /** Live list; the chat adapter notifies on changes after send(). */
     public List<ChatMessage> getMessages(String id) {
         List<ChatMessage> list = messages.get(id);

@@ -1,6 +1,5 @@
 package com.itismob.s02.group9.mco.dormmate;
 
-import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,8 +36,7 @@ public class ActiveContactAdapter extends RecyclerView.Adapter<ActiveContactAdap
     @Override
     public void onBindViewHolder(@NonNull VH h, int position) {
         Conversation c = items.get(position);
-        h.avatar.setText(c.getInitial());
-        h.avatar.setBackgroundTintList(ColorStateList.valueOf(c.getAvatarColor()));
+        AvatarLoader.bind(h.avatar, c);
         h.name.setText(c.getFirstName());
         h.activeDot.setVisibility(c.isActive() ? View.VISIBLE : View.GONE);
         h.itemView.setOnClickListener(v -> listener.onClick(c));

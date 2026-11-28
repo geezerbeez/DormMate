@@ -38,7 +38,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.VH> {
         ChatMessage m = items.get(position);
         h.text.setText(m.getText());
 
-        // Messenger-style: show a centered time only when there's a long gap.
+
         boolean showTime = position == 0
                 || m.getTimestamp() - items.get(position - 1).getTimestamp() > SEPARATOR_GAP_MS;
         h.time.setVisibility(showTime ? View.VISIBLE : View.GONE);

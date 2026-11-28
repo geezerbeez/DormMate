@@ -297,16 +297,11 @@ public class RoommateDiscoveryFragment extends Fragment {
                         .create();
 
         continueBtn.setOnClickListener(v -> dialog.dismiss());
-        // TODO: pass the matched roommate.id to a method that creates the conversation (message page)
 
+        // Same chat as "Connect with ..." on their profile (one chat per person).
         messageBtn.setOnClickListener(v -> {
             dialog.dismiss();
-
-            Intent intent = new Intent(requireActivity(), Pages.class);
-            intent.putExtra(Pages.EXTRA_OPEN_TAB, "messages");
-            // TODO: also pass roommate.id so Messages can open a chat with this person
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
+            ChatLauncher.openChatWith(requireActivity(), roommate);
         });
 
         dialog.show();

@@ -73,5 +73,9 @@ public class Pages extends AppCompatActivity {
         if ("messages".equals(intent.getStringExtra(EXTRA_OPEN_TAB))) {
             nav.setSelectedItemId(R.id.nav_messages);
         }
+
+        else if ("profile".equals(intent.getStringExtra(EXTRA_OPEN_TAB))) {
+            nav.setSelectedItemId(R.id.nav_profile);
+        }
     }
 }
