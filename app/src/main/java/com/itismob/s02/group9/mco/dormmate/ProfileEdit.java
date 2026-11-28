@@ -28,7 +28,7 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-public class EditProfile extends AppCompatActivity {
+public class ProfileEdit extends AppCompatActivity {
 
     private static final int MIN_AGE = 18;
     private static final int MAX_AGE = 99;
@@ -81,7 +81,7 @@ public class EditProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_profile_edit);
 
         bindViews();
         setupDropdown(genderLayout, genderDropdown, GENDERS);

@@ -50,7 +50,7 @@ public class RoommateFilterBottomSheet extends BottomSheetDialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.roommate_bottom_sheet_filter, container, false);
+        return inflater.inflate(R.layout.bottom_sheet_filter_roommate, container, false);
     }
 
     @Override

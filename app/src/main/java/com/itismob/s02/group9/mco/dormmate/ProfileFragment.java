@@ -24,7 +24,7 @@ public class ProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         showProfile(view);
         view.findViewById(R.id.editButtonIb).setOnClickListener(v ->
-                startActivity(new Intent(requireContext(), EditProfile.class)));
+                startActivity(new Intent(requireContext(), ProfileEdit.class)));
     }
 
     // placeholder data rn; replace with saved data later

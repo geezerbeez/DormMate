@@ -48,7 +48,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
         Conversation c = items.get(position);
         boolean unread = c.getUnreadCount() > 0;
 
-        AvatarLoader.bind(h.avatar, c);
+        ChatAvatarLoader.bind(h.avatar, c);
         h.name.setText(c.getName());
 
         String msg = c.getLastMessage();

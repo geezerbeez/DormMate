@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 /** Horizontal row of circular contact avatars shown above the chat list. */
-public class ActiveContactAdapter extends RecyclerView.Adapter<ActiveContactAdapter.VH> {
+public class ChatActiveContactAdapter extends RecyclerView.Adapter<ChatActiveContactAdapter.VH> {
 
     private List<Conversation> items;
     private final ConversationAdapter.OnConversationClick listener;
 
-    public ActiveContactAdapter(List<Conversation> items, ConversationAdapter.OnConversationClick listener) {
+    public ChatActiveContactAdapter(List<Conversation> items, ConversationAdapter.OnConversationClick listener) {
         this.items = items;
         this.listener = listener;
     }
@@ -36,7 +36,7 @@ public class ActiveContactAdapter extends RecyclerView.Adapter<ActiveContactAdap
     @Override
     public void onBindViewHolder(@NonNull VH h, int position) {
         Conversation c = items.get(position);
-        AvatarLoader.bind(h.avatar, c);
+        ChatAvatarLoader.bind(h.avatar, c);
         h.name.setText(c.getFirstName());
         h.activeDot.setVisibility(c.isActive() ? View.VISIBLE : View.GONE);
         h.itemView.setOnClickListener(v -> listener.onClick(c));

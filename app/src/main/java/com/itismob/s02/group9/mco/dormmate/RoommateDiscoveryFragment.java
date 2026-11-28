@@ -76,7 +76,7 @@ public class RoommateDiscoveryFragment extends Fragment {
         roommateTags = view.findViewById(R.id.roommateTags);
 
         // Sample student users
-        allRoommates = DataHelperRoommate.getRoommates();
+        allRoommates = RoommateDataHelper.getRoommates();
         roommates = new ArrayList<>(allRoommates);
 
         displayCurrentRoommate();
@@ -273,7 +273,7 @@ public class RoommateDiscoveryFragment extends Fragment {
     private void showMatchDialog(Roommate roommate) {
 
         View dialogView = getLayoutInflater()
-                .inflate(R.layout.roommate_dialog_match, null);
+                .inflate(R.layout.activity_roommate_dialog_match, null);
 
         ImageView myImage = dialogView.findViewById(R.id.myMatchImage);
 

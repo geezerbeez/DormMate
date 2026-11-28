@@ -7,11 +7,11 @@ import java.util.Arrays;
 import java.util.List;
 
 // Sample data for roommate pages
-public class DataHelperRoommate {
+public class RoommateDataHelper {
 
     private static List<Roommate> roommates;
 
-    private DataHelperRoommate() {}
+    private RoommateDataHelper() {}
 
     public static List<Roommate> getRoommates() {
         return new ArrayList<>(load());

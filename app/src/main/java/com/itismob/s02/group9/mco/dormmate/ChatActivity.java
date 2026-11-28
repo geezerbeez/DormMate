@@ -22,7 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ChatActivity extends AppCompatActivity {
     public static final String EXTRA_CONVERSATION_ID = "conversation_id";
 
-    private MessageStore store;
+    private ChatStore store;
     private String conversationId;
     private ChatAdapter adapter;
     private RecyclerView rvMessages;
@@ -43,7 +43,7 @@ public class ChatActivity extends AppCompatActivity {
             return insets;
         });
 
-        store = MessageStore.get();
+        store = ChatStore.get();
         conversationId = getIntent().getStringExtra(EXTRA_CONVERSATION_ID);
         Conversation conversation = conversationId == null ? null : store.getConversation(conversationId);
         if (conversation == null) {
@@ -53,7 +53,7 @@ public class ChatActivity extends AppCompatActivity {
         store.markRead(conversationId);
 
         ((TextView) findViewById(R.id.tvChatName)).setText(conversation.getName());
-        AvatarLoader.bind(findViewById(R.id.tvChatAvatar), conversation);
+        ChatAvatarLoader.bind(findViewById(R.id.tvChatAvatar), conversation);
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
         findViewById(R.id.btnCall).setOnClickListener(v -> dial(conversation));

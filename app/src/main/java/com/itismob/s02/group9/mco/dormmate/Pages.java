@@ -41,7 +41,7 @@ public class Pages extends AppCompatActivity {
             } else if (id == R.id.nav_roommate) {
                 fragment = new RoommateDiscoveryFragment();
             } else if (id == R.id.nav_messages) {
-                fragment = new MessagesFragment();
+                fragment = new ChatsFragment();
             } else if (id == R.id.nav_profile) {
                 fragment = new ProfileFragment();
             } else {

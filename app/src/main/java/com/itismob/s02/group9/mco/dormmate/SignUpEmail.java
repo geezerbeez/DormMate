@@ -3,13 +3,11 @@ package com.itismob.s02.group9.mco.dormmate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -17,9 +15,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
 
-public class activity_sign_up_email extends AppCompatActivity {
+public class SignUpEmail extends AppCompatActivity {
 
     private EditText etEmailEntry, etPasswordEntry;
     private ImageButton imgbtnEmail;
@@ -84,7 +81,7 @@ public class activity_sign_up_email extends AppCompatActivity {
                     .addOnCompleteListener(this, task -> {
                         imgbtnEmail.setEnabled(true);
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(activity_sign_up_email.this, activity_sign_up3.class);
+                            Intent intent = new Intent(SignUpEmail.this, SignUp3.class);
                             startActivity(intent);
                         }
                         else{

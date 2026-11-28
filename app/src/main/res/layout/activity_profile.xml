@@ -20,7 +20,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            tools:src="@drawable/baseline_arrow_back_ios_new_24"
+            tools:src="@drawable/ic_arrow_back"
 
             app:layout_constraintEnd_toStartOf="@+id/profileTitleTv"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            tools:src="@drawable/baseline_edit_24"
+            tools:src="@drawable/ic_edit_dark"
 
             app:layout_constraintStart_toEndOf="@+id/profileTitleTv"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -73,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            tools:src="@drawable/baseline_photo_camera_24"
+            tools:src="@drawable/ic_photo_camera"
 
             app:layout_constraintBottom_toBottomOf="@+id/profilePicture"
             app:layout_constraintEnd_toEndOf="@+id/profilePicture"/>
