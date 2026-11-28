@@ -15,28 +15,29 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class activity_sign_up3 extends AppCompatActivity {
+public class SignUpGenderPreference extends AppCompatActivity {
+
     public boolean isSelected = false;
-    private TextView tvContractWarning;
-    private FrameLayout btnLongTerm, btnShortTerm, btnTempStay;
+    private FrameLayout btnMale, btnFemale, btnNoPref;
     private ImageView shpSolid1, shpSolid2, shpSolid3;
-    private ImageButton btnProceed;
+    private ImageButton btnProceedPref;
+    private TextView tvGenderWarning;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WindowCompat.enableEdgeToEdge(getWindow());
-        setContentView(R.layout.activity_sign_up3);
+        setContentView(R.layout.activity_sign_up_gender_preference);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        this.btnLongTerm = findViewById(R.id.btnLongTerm);
-        this.btnShortTerm = findViewById(R.id.btnShortTerm);
-        this.btnTempStay = findViewById(R.id.btnTempStay);
-        this.btnProceed = findViewById(R.id.btnProceed);
-        this.tvContractWarning = findViewById(R.id.tvContractWarning);
+        this.btnMale = findViewById(R.id.btnMale);
+        this.btnFemale = findViewById(R.id.btnFemale);
+        this.btnNoPref = findViewById(R.id.btnNoPref);
+        this.btnProceedPref = findViewById(R.id.btnProceedPref);
+        this.tvGenderWarning = findViewById(R.id.tvGenderWarning);
 
         shpSolid1 = findViewById(R.id.shpSolid1);
         Drawable originalCircle = shpSolid1.getDrawable();
@@ -44,39 +45,37 @@ public class activity_sign_up3 extends AppCompatActivity {
         Drawable originalCircle2 = shpSolid2.getDrawable();
         shpSolid3 = findViewById(R.id.shpSolid3);
 
-        btnLongTerm.setOnClickListener(v -> {
-            tvContractWarning.setVisibility(View.GONE);
+        btnMale.setOnClickListener(v -> {
+            tvGenderWarning.setVisibility(View.GONE);
             isSelected = true;
             shpSolid1.setImageResource(R.drawable.check_circle);
             shpSolid2.setImageResource(R.drawable.circle_outline);
             shpSolid3.setImageResource(R.drawable.circle_outline);
         });
-        btnShortTerm.setOnClickListener(v -> {
-            tvContractWarning.setVisibility(View.GONE);
+        btnFemale.setOnClickListener(v -> {
+            tvGenderWarning.setVisibility(View.GONE);
             isSelected = true;
             shpSolid1.setImageResource(R.drawable.circle_outline);
             shpSolid2.setImageResource(R.drawable.check_circle);
             shpSolid3.setImageResource(R.drawable.circle_outline);
         });
-        btnTempStay.setOnClickListener(v -> {
-            tvContractWarning.setVisibility(View.GONE);
+        btnNoPref.setOnClickListener(v -> {
+            tvGenderWarning.setVisibility(View.GONE);
             isSelected = true;
             shpSolid1.setImageResource(R.drawable.circle_outline);
             shpSolid2.setImageResource(R.drawable.circle_outline);
             shpSolid3.setImageResource(R.drawable.check_circle);
         });
 
-
-        btnProceed.setOnClickListener(v -> {
+        btnProceedPref.setOnClickListener(v -> {
             if(isSelected){
-                Intent intent = new Intent(activity_sign_up3.this, activity_sign_up_genderPreference.class);
+                Intent intent = new Intent(SignUpGenderPreference.this, SignUp4.class);
                 startActivity(intent);
             }
             else{
-                tvContractWarning.setVisibility(View.VISIBLE);
+                tvGenderWarning.setVisibility(View.VISIBLE);
                 return;
             }
         });
-
     }
 }

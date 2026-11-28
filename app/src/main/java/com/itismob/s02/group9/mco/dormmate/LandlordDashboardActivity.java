@@ -56,7 +56,7 @@ public class LandlordDashboardActivity extends AppCompatActivity implements Land
         statusChipGroup.setOnCheckedStateChangeListener((group, ids) -> refresh());
 
         fab.setOnClickListener(v ->
-                startActivity(new Intent(this, AddEditListingActivity.class)));
+                startActivity(new Intent(this, LandlordAddEditListingActivity.class)));
 
         findViewById(R.id.exitBtn).setOnClickListener(v -> finish());
     }
@@ -105,8 +105,8 @@ public class LandlordDashboardActivity extends AppCompatActivity implements Land
 
     @Override
     public void onEdit(Dorm dorm) {
-        Intent i = new Intent(this, AddEditListingActivity.class);
-        i.putExtra(AddEditListingActivity.EXTRA_DORM_ID, dorm.getId());
+        Intent i = new Intent(this, LandlordAddEditListingActivity.class);
+        i.putExtra(LandlordAddEditListingActivity.EXTRA_DORM_ID, dorm.getId());
         startActivity(i);
     }
 
