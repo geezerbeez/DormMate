@@ -17,13 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class MessagesFragment extends Fragment {
+public class ChatsFragment extends Fragment {
     private ConversationAdapter adapter;
-    private ActiveContactAdapter activeAdapter;
+    private ChatActiveContactAdapter activeAdapter;
     private View emptyView;
     private String query = "";
 
-    public MessagesFragment() {
+    public ChatsFragment() {
         super(R.layout.fragment_messages);
     }
 
@@ -41,7 +41,7 @@ public class MessagesFragment extends Fragment {
 
         rvActive.setLayoutManager(new LinearLayoutManager(
                 requireContext(), LinearLayoutManager.HORIZONTAL, false));
-        activeAdapter = new ActiveContactAdapter(new ArrayList<>(), this::openChat);
+        activeAdapter = new ChatActiveContactAdapter(new ArrayList<>(), this::openChat);
         rvActive.setAdapter(activeAdapter);
 
         etSearch.addTextChangedListener(new TextWatcher() {
@@ -67,7 +67,7 @@ public class MessagesFragment extends Fragment {
     }
 
     private void refresh() {
-        List<Conversation> all = MessageStore.get().getConversations();
+        List<Conversation> all = ChatStore.get().getConversations();
         activeAdapter.setItems(all);
 
         List<Conversation> shown = new ArrayList<>();

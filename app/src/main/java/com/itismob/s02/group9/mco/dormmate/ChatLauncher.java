@@ -10,7 +10,7 @@ public final class ChatLauncher {
 
     public static void openChatWith(Activity from, Roommate roommate) {
         // One chat per person, keyed by the roommate id, with their photo attached.
-        Conversation chat = MessageStore.get()
+        Conversation chat = ChatStore.get()
                 .getOrCreateConversation(roommate.id, roommate.name, roommate.photoRes);
 
         // Put the Messages tab underneath so Back from the chat lands there.

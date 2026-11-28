@@ -18,7 +18,7 @@ import com.google.android.material.slider.RangeSlider;
 import java.util.List;
 
 /** "Filter dormitories" sheet: price range, room type, amenities. */
-public class FilterBottomSheet extends BottomSheetDialogFragment {
+public class ExploreFilterBottomSheet extends BottomSheetDialogFragment {
 
     public interface FilterListener {
         void onFilterApplied(DormFilter filter);
@@ -30,8 +30,8 @@ public class FilterBottomSheet extends BottomSheetDialogFragment {
     private TextView priceRangeTv;
     private ChipGroup roomTypeGroup, amenityGroup;
 
-    public static FilterBottomSheet newInstance(DormFilter current) {
-        FilterBottomSheet f = new FilterBottomSheet();
+    public static ExploreFilterBottomSheet newInstance(DormFilter current) {
+        ExploreFilterBottomSheet f = new ExploreFilterBottomSheet();
         Bundle b = new Bundle();
         b.putSerializable(ARG_FILTER, current);
         f.setArguments(b);
@@ -42,7 +42,7 @@ public class FilterBottomSheet extends BottomSheetDialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.bottom_sheet_filter, container, false);
+        return inflater.inflate(R.layout.bottom_sheet_filter_dormitory, container, false);
     }
 
     @Override

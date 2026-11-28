@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".interest_rv"
+    tools:context=".InterestRv"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="8dp">
 

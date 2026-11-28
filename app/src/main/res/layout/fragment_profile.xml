@@ -22,7 +22,7 @@
             android:contentDescription="Back"
             android:padding="10dp"
             android:visibility="invisible"
-            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            android:src="@drawable/ic_arrow_back"
             app:shapeAppearanceOverlay="@style/circleImage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
             android:layout_height="42dp"
             android:contentDescription="Edit profile"
             android:padding="9dp"
-            android:src="@drawable/baseline_edit_24"
+            android:src="@drawable/ic_edit_dark"
             app:shapeAppearanceOverlay="@style/circleImage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -335,7 +335,7 @@
                     android:id="@+id/areaTv"
                     style="@style/ReadProfileValueText"
                     android:drawablePadding="10dp"
-                    android:drawableStart="@drawable/baseline_location_on_24"
+                    android:drawableStart="@drawable/ic_location_filled"
                     android:drawableTint="@color/orange"
                     tools:text="Katipunan · UP Diliman · Teacher's Village" />
             </com.google.android.material.card.MaterialCardView>

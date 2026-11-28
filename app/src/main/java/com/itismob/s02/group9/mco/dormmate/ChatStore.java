@@ -10,18 +10,18 @@ import java.util.Map;
  * In-memory message store with sample data. Swap the internals for Room or
  * Firebase later; the rest of the UI only talks to this class.
  */
-public class MessageStore {
-    private static MessageStore instance;
+public class ChatStore {
+    private static ChatStore instance;
 
     private final Map<String, Conversation> conversations = new HashMap<>();
     private final Map<String, List<ChatMessage>> messages = new HashMap<>();
 
-    public static synchronized MessageStore get() {
-        if (instance == null) instance = new MessageStore();
+    public static synchronized ChatStore get() {
+        if (instance == null) instance = new ChatStore();
         return instance;
     }
 
-    private MessageStore() {
+    private ChatStore() {
         long now = System.currentTimeMillis();
         long min = 60_000L, hour = 60 * min, day = 24 * hour;
 

@@ -18,11 +18,11 @@ import java.util.Map;
  * Fills a round avatar view: the contact's profile photo when they have one,
  * otherwise a colored circle with their initial.
  */
-public final class AvatarLoader {
+public final class ChatAvatarLoader {
     private static final int SIZE = 192;
     private static final Map<Integer, Bitmap> CACHE = new HashMap<>();
 
-    private AvatarLoader() {}
+    private ChatAvatarLoader() {}
 
     public static void bind(TextView view, Conversation c) {
         Bitmap photo = c.getPhotoRes() != 0 ? circlePhoto(view.getResources(), c.getPhotoRes()) : null;

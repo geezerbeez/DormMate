@@ -21,10 +21,9 @@ import com.google.android.flexbox.FlexboxLayoutManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Locale;
 
 
-public class activity_sign_up4 extends AppCompatActivity {
+public class SignUp4 extends AppCompatActivity {
     private ImageButton btnContinue, btnClearSearch;
     private EditText etInterestSearch;
     private TextView btnSkip, tvInterestError,
@@ -81,7 +80,7 @@ public class activity_sign_up4 extends AppCompatActivity {
             if (selectedCount == 5) {
                 tvInterestError.setVisibility(View.GONE);
 
-                Intent intent = new Intent(activity_sign_up4.this, activity_sign_up5.class);
+                Intent intent = new Intent(SignUp4.this, SignUp5.class);
                 startActivity(intent);
             } else if (selectedCount < 5) {
                 tvInterestError.setText("Please select " + (5 - selectedCount) + " more.");
@@ -93,7 +92,7 @@ public class activity_sign_up4 extends AppCompatActivity {
         });
 
         btnSkip.setOnClickListener(v -> {
-            Intent intent = new Intent(activity_sign_up4.this, activity_sign_up5.class);
+            Intent intent = new Intent(SignUp4.this, SignUp5.class);
             startActivity(intent);
         });
 

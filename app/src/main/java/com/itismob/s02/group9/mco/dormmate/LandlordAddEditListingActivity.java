@@ -28,7 +28,7 @@ import java.util.List;
  * Add / Edit Dormitory Listing (dorm-owner side).
  * Launch without extras to add; pass EXTRA_DORM_ID to edit an existing listing.
  */
-public class AddEditListingActivity extends AppCompatActivity {
+public class LandlordAddEditListingActivity extends AppCompatActivity {
 
     public static final String EXTRA_DORM_ID = "dorm_id";
 
@@ -57,7 +57,7 @@ public class AddEditListingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_add_edit_listing);
+        setContentView(R.layout.activity_landlord_add_edit_listing);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             Insets ime = insets.getInsets(WindowInsetsCompat.Type.ime());

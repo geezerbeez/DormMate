@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +14,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -92,7 +90,7 @@ public class SignUp extends AppCompatActivity {
                 return;
             }
 
-            Intent intent = new Intent(SignUp.this, activity_sign_up_email.class);
+            Intent intent = new Intent(SignUp.this, SignUpEmail.class);
             startActivity(intent);
 
         });

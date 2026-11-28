@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class activity_sign_up5 extends AppCompatActivity {
+public class SignUp5 extends AppCompatActivity {
     private ImageButton btnContinue;
     private TextView btnSkip, tvLifestyleError,
             tvInterestError, btnDrinkingCh1, btnDrinkingCh2, btnDrinkingCh3, btnDrinkingCh4,
@@ -90,12 +90,12 @@ public class activity_sign_up5 extends AppCompatActivity {
                 return;
             }
 
-            Intent intent = new Intent(activity_sign_up5.this, activity_sign_up6.class);
+            Intent intent = new Intent(SignUp5.this, SignUp6.class);
             startActivity(intent);
         });
 
         btnSkip.setOnClickListener(v -> {
-            Intent intent = new Intent(activity_sign_up5.this, activity_sign_up6.class);
+            Intent intent = new Intent(SignUp5.this, SignUp6.class);
             startActivity(intent);
         });
     }

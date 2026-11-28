@@ -27,7 +27,7 @@ public class RoommateProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.roommate_profile);
+        setContentView(R.layout.activity_roommate_profile);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -44,7 +44,7 @@ public class RoommateProfileActivity extends AppCompatActivity {
 
 
         String id = getIntent().getStringExtra(EXTRA_ROOMMATE_ID);
-        Roommate roommate = DataHelperRoommate.getRoommateById(id);
+        Roommate roommate = RoommateDataHelper.getRoommateById(id);
         if (roommate == null) {
             Toast.makeText(this, "Profile not found", Toast.LENGTH_SHORT).show();
             finish();

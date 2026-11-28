@@ -22,7 +22,7 @@ import com.google.android.material.chip.ChipGroup;
 import java.util.List;
 
 /** Explore tab: search + filter + list/map of dormitory listings. */
-public class ExploreFragment extends Fragment implements FilterBottomSheet.FilterListener {
+public class ExploreFragment extends Fragment implements ExploreFilterBottomSheet.FilterListener {
 
     private DormFilter filter = new DormFilter();
     private DormAdapter adapter;
@@ -84,7 +84,7 @@ public class ExploreFragment extends Fragment implements FilterBottomSheet.Filte
 
         // Filter button -> bottom sheet
         filterBtn.setOnClickListener(v ->
-                FilterBottomSheet.newInstance(filter).show(getChildFragmentManager(), "filter"));
+                ExploreFilterBottomSheet.newInstance(filter).show(getChildFragmentManager(), "filter"));
 
         // List / Map toggle (map is a placeholder until Google Maps is added)
         viewToggle.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
